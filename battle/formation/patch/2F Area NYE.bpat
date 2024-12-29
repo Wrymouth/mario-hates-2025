@@ -25,7 +25,7 @@
     $Two  00000000 0000000A 00000000 00000000 00000000 00000000
     $Zero 00000001 00000009 00000000 00000000 00000000 00000000
     $Two  00000002 00000008 00000000 00000000 00000000 00000000
-    $Two  00000003 00000007 00000000 00000000 00000000 00000000
+    $Five 00000003 00000007 00000000 00000000 00000000 00000000
 }
 
 #new:Actor $Two {
@@ -80,6 +80,33 @@
 [StatusIcon]   10`b  20`b % dx dy
 }
 
+#new:Actor $Five {
+    [Index]        D5b 
+    [Level]        40`b 
+    [MaxHP]        30`b 
+    [Coins]         1`b 
+    [Flags]       00000000 
+    [StatusTable] $StatusTable_Five
+    % ai
+    [PartsCount]    1`s 
+    [PartsTable]  $PartsTable_Five
+    [Script]      $Script_Init_Five
+    % move effectiveness
+    [Escape]       60`b 
+    [Item]         60`b 
+    [AirLift]      75`b 
+    [Hurricane]    75`b % Bow's "Spook" as well
+    [UpAndAway]    95`b 
+    [PowerBounce]  90`b 
+    [SpinSmash]     0`b % weight (0-4)
+    % ui positions
+    [Size]         90`b  70`b % width height
+    [HealthBar]     0`b   0`b % dx dy
+    [StatusTurn]  -10`b  20`b % dx dy
+    [StatusIcon]   10`b  20`b % dx dy
+    }
+    
+
 #new:StatusTable $StatusTable_Two {
     .Status:Normal      0`
     .Status:Default     0`
@@ -96,6 +123,14 @@
     .Status:End
 }
 
+#new:StatusTable $StatusTable_Five {
+    .Status:Normal      0`
+    .Status:Default     0`
+    .Status:Sleep      50`
+    .Status:Paralyze   60`
+    .Status:End
+}
+
 #new:PartsTable $PartsTable_Two {
     00800000 01000000 F04000FF $IdleAnimations_Two $DefenseTable_Two 00000000 00000000 00F00000 00000000 
 }
@@ -104,12 +139,21 @@
     00800000 01000000 F04000FF $IdleAnimations_Zero $DefenseTable_Zero 00000000 00000000 00F00000 00000000 
 }
 
+#new:PartsTable $PartsTable_Five {
+    00800000 01000000 F04000FF $IdleAnimations_Five $DefenseTable_Five 00000000 00000000 00F00000 00000000 
+}
+
 #new:DefenseTable $DefenseTable_Two {
     .Element:Normal 00000001
     .Element:End
 }
 
 #new:DefenseTable $DefenseTable_Zero {
+    .Element:Normal 00000001
+    .Element:End
+}
+
+#new:DefenseTable $DefenseTable_Five {
     .Element:Normal 00000001
     .Element:End
 }
@@ -140,6 +184,20 @@
     .Status:End
 }
 
+#new:IdleAnimations $IdleAnimations_Five {
+    .Status:Normal    00EC0000
+    .Status:Stone     00EC0000
+    .Status:Sleep     00EC0001
+    .Status:Poison    00EC0000
+    .Status:Stop      00EC0000
+    .Status:Static    00EC0000
+    .Status:Paralyze  00EC0000
+    .Status:Dizzy     00EC0000
+    .Status:Fear      00EC0000
+    .Status:End
+}
+
+
 #new:Script $Script_Init_Two {
     Call BindTakeTurn ( .Actor:Self $Script_TakeTurn_Two )
     Call BindIdle ( .Actor:Self $Script_Idle_Two )
@@ -158,11 +216,20 @@
     End
 }
 
+#new:Script $Script_Init_Five {
+    Call BindTakeTurn ( .Actor:Self $Script_TakeTurn_Five )
+    Call BindIdle ( .Actor:Self $Script_Idle_Five )
+    Call BindHandleEvent ( .Actor:Self $Script_HandleEvent_Five )
+    Call BindNextTurn ( .Actor:Self $Script_NextTurn_Five )
+    Return
+    End
+}
+
 #new:Script $Script_NextTurn_Two {
     Call GetBattlePhase ( *Var0 )
     If *Var0 == .Phase:EnemyEnd 
         Call SetBattleVar ( 1 0 )
-        If *NoDamageFirstTurn == 1
+        If *NoDamageFirstTurn == 1F
             Set *NoDamageFirstTurn .False
         EndIf
     EndIf
@@ -193,6 +260,11 @@
 }
 
 #new:Script $Script_NextTurn_Zero {
+    Return
+    End
+}
+
+#new:Script $Script_NextTurn_Five {
     Return
     End
 }
@@ -230,6 +302,22 @@
         ExecWait $Script_Attack_Jump
     Case <= 120`
         ExecWait $Script_Attack_ZeroHeal
+    EndSwitch
+    Return
+    End
+}
+
+#new:Script $Script_TakeTurn_Five {
+    Call RandInt ( 120` *Var0 )
+    % Set *Var0 100`
+    Switch *Var0
+    Case <= 40`
+        Call SetActorVar ( .Actor:Self 2 1 )
+        ExecWait $Script_Attack_Firework
+    Case <= 80`
+        ExecWait $Script_Attack_Jump
+    Case <= 120`
+        ExecWait $Script_Attack_TwoPartner
     EndSwitch
     Return
     End
@@ -475,56 +563,53 @@
     End
 }
 
+#new:Script $Script_Idle_Five {
+    Call SetActorScale ( .Actor:Self *Fixed[0.7] *Fixed[0.7] *Fixed[0.7] )
+    Return
+    End
+}
+
 #new:Script $Script_HandleEvent_Two {
     Call GetLastEvent ( .Actor:Self *Var0 )
     Switch *Var0
     Case == .Event:Death
         SetConst  *Var0  00000001 
-        SetConst  *Var1  00EA0000 
+        SetConst  *Var1  00EA0001 
         ExecWait  DoNormalHit 
         Wait  10`
         SetConst  *Var0  00000001 
-        SetConst  *Var1  00EA0000 
+        SetConst  *Var1  00EA0001 
         ExecWait  DoDeath
     Case == .Event:ShockHit
         SetConst  *Var0  00000001 
-        SetConst  *Var1  00EA0000 
+        SetConst  *Var1  00EA0001 
         ExecWait  DoShockHit 
-        SetConst  *Var0  00000001 
-        SetConst  *Var1  00EA0000 
-        ExecWait  DoJumpBack 
-        Call JumpToGoal    ( .Actor:Self  5` .False .True .False )
-        Call SetAnimationRate      ( .Actor:Self 00000001 *Fixed[2.0] )
-        Call SetAnimation  ( .Actor:Self 00000001 00EA0000 )
-        Call SetGoalToHome ( .Actor:Self )
-        Call SetActorSpeed ( .Actor:Self *Fixed[8.0] )
-        Call RunToGoal     ( .Actor:Self  0` .False )
-        Call SetAnimationRate      ( .Actor:Self 00000001 *Fixed[1.0] )
-        Wait  5`
-        Call SetAnimation  ( .Actor:Self 00000001 00EA0000 )
-        Call SetActorJumpGravity   ( .Actor:Self *Fixed[1.6] )
-        Call JumpToGoal    ( .Actor:Self  5` .False .True .False )
     Case == .Event:ShockDeath
         SetConst  *Var0  00000001 
-        SetConst  *Var1  00EA0000 
+        SetConst  *Var1  00EA0001 
         ExecWait  DoShockHit 
         SetConst  *Var0  00000001 
-        SetConst  *Var1  00EA0000 
+        SetConst  *Var1  00EA0001 
         ExecWait  DoDeath 
     Case  ==  .Event:BurnHit % E
-        BC:  		SetConst  *Var0  00000001 
-        CC:  		SetConst  *Var1  00EA0000 
-        DC:  		SetConst  *Var2  00EA0000 
-        EC:  		ExecWait  DoBurnHit 
+        SetConst  *Var0  00000001 
+        SetConst  *Var1  00EA0001 
+        SetConst  *Var2  00EA0001 
+        ExecWait  DoBurnHit 
     Case  ==  .Event:BurnDeath % 24
-       104:  		SetConst  *Var0  00000001 
-       114:  		SetConst  *Var1  00EA0000 
-       124:  		SetConst  *Var2  00EA0000 
-       134:  		ExecWait  DoBurnHit 
-       140:  		SetConst  *Var0  00000001 
-       150:  		SetConst  *Var1  00EA0000 
-       160:  		ExecWait  DoDeath 
-    Return
+     	SetConst  *Var0  00000001 
+     	SetConst  *Var1  00EA0001 
+     	SetConst  *Var2  00EA0001 
+     	ExecWait  DoBurnHit 
+     	SetConst  *Var0  00000001 
+     	SetConst  *Var1  00EA0001 
+     	ExecWait  DoDeath
+    CaseOR  ==  .Event:HitCombo % 9
+    CaseOR  ==  .Event:Hit % A
+    	SetConst  *Var0  00000001
+    	SetConst  *Var1  00EA0001 
+    	ExecWait  DoNormalHit 
+    EndCaseGroup
     EndSwitch 
     Return
     End
@@ -535,50 +620,88 @@
     Switch *Var0
     Case == .Event:Death
         SetConst  *Var0  00000001 
-        SetConst  *Var1  00EB0000 
+        SetConst  *Var1  00EB0001 
         ExecWait  DoNormalHit 
         Wait  10`
         SetConst  *Var0  00000001 
-        SetConst  *Var1  00EB0000 
+        SetConst  *Var1  00EB0001 
         ExecWait  DoDeath
     Case == .Event:ShockHit
         SetConst  *Var0  00000001 
-        SetConst  *Var1  00EA0000 
+        SetConst  *Var1  00EB0001 
         ExecWait  DoShockHit 
-        SetConst  *Var0  00000001 
-        SetConst  *Var1  00EA0000 
-        ExecWait  DoJumpBack 
-        Call JumpToGoal    ( .Actor:Self  5` .False .True .False )
-        Call SetAnimationRate      ( .Actor:Self 00000001 *Fixed[2.0] )
-        Call SetAnimation  ( .Actor:Self 00000001 00EB0000 )
-        Call SetGoalToHome ( .Actor:Self )
-        Call SetActorSpeed ( .Actor:Self *Fixed[8.0] )
-        Call RunToGoal     ( .Actor:Self  0` .False )
-        Call SetAnimationRate      ( .Actor:Self 00000001 *Fixed[1.0] )
-        Wait  5`
-        Call SetAnimation  ( .Actor:Self 00000001 00EB0000 )
-        Call SetActorJumpGravity   ( .Actor:Self *Fixed[1.6] )
-        Call JumpToGoal    ( .Actor:Self  5` .False .True .False )
     Case == .Event:ShockDeath
         SetConst  *Var0  00000001 
-        SetConst  *Var1  00EB0000 
+        SetConst  *Var1  00EB0001 
         ExecWait  DoShockHit 
         SetConst  *Var0  00000001 
-        SetConst  *Var1  00EB0000 
+        SetConst  *Var1  00EB0001 
         ExecWait  DoDeath 
     Case  ==  .Event:BurnHit % E
-        BC:  		SetConst  *Var0  00000001 
-        CC:  		SetConst  *Var1  00EB0000 
-        DC:  		SetConst  *Var2  00EB0000 
-        EC:  		ExecWait  DoBurnHit 
+        SetConst  *Var0  00000001 
+        SetConst  *Var1  00EB0001 
+        SetConst  *Var2  00EB0001 
+        ExecWait  DoBurnHit 
     Case  ==  .Event:BurnDeath % 24
-       104:  		SetConst  *Var0  00000001 
-       114:  		SetConst  *Var1  00EB0000 
-       124:  		SetConst  *Var2  00EB0000 
-       134:  		ExecWait  DoBurnHit 
-       140:  		SetConst  *Var0  00000001 
-       150:  		SetConst  *Var1  00EB0000 
-       160:  		ExecWait  DoDeath 
+     	SetConst  *Var0  00000001 
+     	SetConst  *Var1  00EB0001 
+     	SetConst  *Var2  00EB0001 
+     	ExecWait  DoBurnHit 
+     	SetConst  *Var0  00000001 
+     	SetConst  *Var1  00EB0001 
+     	ExecWait  DoDeath
+    CaseOR  ==  .Event:HitCombo % 9
+    CaseOR  ==  .Event:Hit % A
+    	SetConst  *Var0  00000001
+    	SetConst  *Var1  00EB0001 
+    	ExecWait  DoNormalHit 
+    EndCaseGroup
+    EndSwitch 
+    Return
+    End
+}
+
+#new:Script $Script_HandleEvent_Five {
+    Call GetLastEvent ( .Actor:Self *Var0 )
+    Switch *Var0
+    Case == .Event:Death
+        SetConst  *Var0  00000001 
+        SetConst  *Var1  00EC0001 
+        ExecWait  DoNormalHit 
+        Wait  10`
+        SetConst  *Var0  00000001 
+        SetConst  *Var1  00EC0001 
+        ExecWait  DoDeath
+    Case == .Event:ShockHit
+        SetConst  *Var0  00000001 
+        SetConst  *Var1  00EC0001 
+        ExecWait  DoShockHit 
+    Case == .Event:ShockDeath
+        SetConst  *Var0  00000001 
+        SetConst  *Var1  00EC0001 
+        ExecWait  DoShockHit 
+        SetConst  *Var0  00000001 
+        SetConst  *Var1  00EC0001 
+        ExecWait  DoDeath 
+    Case  ==  .Event:BurnHit % E
+        SetConst  *Var0  00000001 
+        SetConst  *Var1  00EC0001 
+        SetConst  *Var2  00EC0001 
+        ExecWait  DoBurnHit 
+    Case  ==  .Event:BurnDeath % 24
+     	SetConst  *Var0  00000001 
+     	SetConst  *Var1  00EC0001 
+     	SetConst  *Var2  00EC0001 
+     	ExecWait  DoBurnHit 
+     	SetConst  *Var0  00000001 
+     	SetConst  *Var1  00EC0001 
+     	ExecWait  DoDeath
+    CaseOR  ==  .Event:HitCombo % 9
+    CaseOR  ==  .Event:Hit % A
+    	SetConst  *Var0  00000001
+    	SetConst  *Var1  00EC0001 
+    	ExecWait  DoNormalHit 
+    EndCaseGroup
     EndSwitch 
     Return
     End
