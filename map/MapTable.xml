@@ -18,6 +18,7 @@
 		<Map name="kmr_23" nickname="Chapter End" hasShape="false" hasHit="false"/>
 		<Map name="kmr_24" nickname="Save and Continue" hasShape="false" hasHit="false"/>
 		<Map name="kmr_30" nickname="Mario's House (Ending)"/>
+		<Map name="kmr_31" nickname="Pipe"/>
 		<Stage name="kmr_bt03"/>
 		<Stage name="kmr_bt04"/>
 		<Stage name="kmr_bt05"/>

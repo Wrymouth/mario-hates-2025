@@ -1,0 +1,25 @@
+@ $Script_EnterMap
+{
+    Call DisablePlayerInput ( .True )
+    Call SetPlayerAnimation ( 00080027 )
+    Exec $Script_PanCamera_CameraTarget
+    Call GetPlayerPos ( *Var0 *Var1 *Var2 )
+    Sub *Var0 60`
+    Call SetPlayerPos ( *Var0 *Var1 *Var2 )
+    %
+    % Rest of code here
+    %
+	Return
+	End
+}
+
+@ $Script_PanCamera_CameraTarget
+{
+	Call  UseSettingsFrom   ( .Cam:Default 0` 32` 0` )
+	Call  SetPanTarget      ( .Cam:Default ~Vec3d:CameraTarget )
+	Call  SetCamSpeed       ( .Cam:Default *Fixed[0.5] )
+	Call  PanToTarget       ( .Cam:Default 00000000 00000001 )
+	Call  WaitForCam        ( .Cam:Default *Fixed[1.0] )
+	Return
+	End
+}
