@@ -152,8 +152,8 @@ false	% reversed
 % 8F = GoombaVillageCopy
 90 = ParadeDay
 91 = ParadeNight
-% 92 = GoombaVillageCopy
-% 93 = GoombaVillageCopy
+92 = MilkyWayLegend
+93 = MLPiTFileSelect
 94 = MarioBrosHouse
 95 = IntroStory
 96 = NewPartnerJP

@@ -238,4 +238,6 @@
 	<File name="mseq/EA_523.mseq"/>
 	<File name="mseq/EB_521.mseq"/>
 	<File name="bgm/MMBNBattleTheme.bgm"/>
+	<File name="bgm/92_MilkyWayLegend.bgm"/>
+	<File name="bgm/93_MLPiTFileSelect.bgm"/>
 </FileList>
