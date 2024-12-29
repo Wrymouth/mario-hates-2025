@@ -1,0 +1,9 @@
+@Function 3E4850
+{
+    ADDIU v0, r0, 0001
+}
+
+@Function 3E4858
+{
+    ADDIU v0, r0, 0011
+}
