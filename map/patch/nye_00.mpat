@@ -1,0 +1,135 @@
+#new:NpcGroup $NpcGroup_2022 {
+    00000001 $NpcSettings_2022 ~Vec3f:Thousand % 100 0 -256
+	00002809 $Script_Init_2022 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:Thousand
+	~AnimationTable:Thousand % .Sprite:Two
+	00000000 00000000 00000000 001A0064 % What is that thing?
+    %
+    00000002 $NpcSettings_2022 ~Vec3f:Hundred % 100 0 -256
+    00002809 $Script_Init_2022 00000000 00000000 0000005A
+    ~NoDrops
+    ~Movement:Hundred
+    ~AnimationTable:Hundred % .Sprite:Zero
+    00000000 00000000 00000000 001A0064 % What is that thing?
+    %
+    00000003 $NpcSettings_2022 ~Vec3f:Ten % 100 0 -256
+    00002809 $Script_Init_2022 00000000 00000000 0000005A
+    ~NoDrops
+    ~Movement:Ten
+    ~AnimationTable:Ten % .Sprite:One
+    00000000 00000000 00000000 001A0064 % What is that thing?
+    %
+    00000004 $NpcSettings_2022 ~Vec3f:One % 100 0 -256
+    00002809 $Script_Init_2022 00000000 00000000 0000005A
+    ~NoDrops
+    ~Movement:One
+    ~AnimationTable:One % .Sprite:Three
+    00000000 00000000 00000000 001A0064 % What is that thing?
+}
+
+#new:NpcSettings $NpcSettings_2022 {
+    00000000 00400020 00000000 00000000 00000000 00000000 00000000 00000000
+	00000000 00000000 00630010
+}
+
+
+
+#new:Script $Script_Init_2022 {
+    Call SetNpcYaw ( .Npc:Self 270` )
+    Call SetNpcScale ( .Npc:Self *Fixed[0.7] *Fixed[0.7] *Fixed[0.7] )
+    Call BindNpcIdle ( 1 $Script_Idle_2022 )
+    Call BindNpcInteract ( .Npc:Self $Script_Interact_2022 )
+    Call BindNpcDefeat ( .Npc:Self $Script_Defeat_2022 )
+    Return
+    End
+}
+
+#new:Script $Script_Defeat_2022 {
+    Call GotoMap ( "nye_03" 0 )
+    Return
+    End
+}
+
+#new:Script $Script_Interact_2022 {
+    Call SpeakToPlayer ( .Npc:Self 00EA0000 00EA0000 00000000 002F001F )
+    Call StartBossBattle ( .Song:NormalBattle )
+    Return
+    End
+}
+
+#new:Script $Script_Idle_2022 {
+    Call AwaitPlayerApproach ( 74` 192` 70` )
+    ExecWait $Script_BattleCutscene
+    Return
+    End
+}
+
+#new:NpcGroupList $NpcGroupList_Nye00 {
+    00000004 $NpcGroup_2022 2F000000
+    00000000 00000000 00000000
+}
+
+@ $Script_Main {
+    Set   *GB_WorldLocation  .Location:GoombaRoad
+    Call  SetCamPerspective  ( .Cam:Default 00000003 00000019 00000010 00001000 )
+    Call  SetCamBGColor      ( .Cam:Default 00000000 00000000 00000000 )
+    Call  SetCamEnabled      ( .Cam:Default .True )
+    Call  SetCamLeadPlayer   ( .Cam:Default .False )
+    Call  MakeNpcs           ( .False $NpcGroupList_Nye00 )
+	Exec  $Script_MakeEntities
+    Exec  $Script_SetupMusic
+    Exec  $Script_EnterMap
+    Return
+    End
+}
+
+@ $Script_EnterMap {
+    Call  GetLoadType   ( *Var[0] )
+    If  *Var[0]  ==  1
+        Exec  EnterSavePoint
+        Exec $Script_CreateExitTriggers
+        Return
+    EndIf
+    Return
+    End
+}
+
+#new:Script $Script_BattleCutscene {
+    Call DisablePlayerInput ( .True )
+    Call SpeakToPlayer ( 1 00EA0000 00EA0000 5 002F001F )
+    Call UseSettingsFrom ( .Cam:Default 28` 169` -112` )
+    Call SetCamSpeed ( .Cam:Default *Fixed[3.0] )
+    Call SetPanTarget ( .Cam:Default 28` 169` -112` )
+    Call PanToTarget ( .Cam:Default .Easing:Linear 1 )
+    Call WaitForCam ( .Cam:Default *Fixed[1.0] )
+    Call SetPlayerPos ( -53` 0` 336` )
+    Wait 30`
+    Thread
+        Call NpcJump0 ( 1 40` 0` 336` 30` )
+    EndThread
+    Thread
+        Call NpcJump0 ( 2 80` 0` 336` 30` )
+    EndThread
+    Thread
+        Call NpcJump0 ( 3 120` 0` 336` 30` )
+    EndThread
+    Thread
+        Call NpcJump0 ( 4 160` 0` 336` 30` )
+    EndThread
+    Wait 10`
+    Call ResetCam ( .Cam:Default *Fixed[3.0] )
+    Call SpeakToPlayer ( 1 00EA0000 00EA0000 5 002F0020 )
+    Call StartBossBattle ( .Song:NormalBattle )
+    Call DisablePlayerInput ( .False )
+    Return
+    End
+}
+
+@ $Header {
+    [MainScript] $Script_Main
+    [Background] 00000000
+    [EntryList] $EntryList
+    [EntryCount] 2
+    [MapTattle] 0019018B
+}

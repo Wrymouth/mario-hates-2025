@@ -570,6 +570,8 @@
 		<Map name="tst_20" nickname="Pipes Gallery"/>
 	</Area>
 	<Area name="nye" nickname="NewYears">
+		<Map name="nye_00" nickname="Confrontation Room"/>
+		<Map name="nye_03" nickname="Ending"/>
 		<Stage name="nye_bt00"/>
 	</Area>
 	<Resource name="mac_tex" compressed="false"/>
