@@ -1,0 +1,11 @@
+@Hook:Pause 80245038
+{
+    JR RA
+    NOP
+}
+
+@Hook:Pause 8024D360
+{
+    JR RA
+    NOP
+}
