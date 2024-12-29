@@ -1,6 +1,226 @@
-#string:2F:000 {
+#message:2F:000
+{
 [Style Inspect]This is a New Years themed mod,[BR]
-created by Wrymouth, Den and Darxoon.[BR]
+created by Wrymouth, Den and[BR]
+Darxoon.[BR]
 [Wait][Next]
-Have fun![Wait][End]    
+Have fun![Wait][End]
+}
+
+#message:2F:001
+{
+[Style Narrate]Dear Diary...[BR]
+[Wait][Next]
+Today is the day.[BR]
+I've been preparing for this[BR]
+moment all year.[BR]
+[Wait][Next]
+It took up so much of my time that[BR]
+I didn't even have time to take[BR]
+care of that meteor that[BR]
+threatened the New Years [BR]
+[Wait][Next]
+celebration last time.[BR]
+[Wait][Next]
+I had to have Luigi take care of[BR]
+that instead.[BR]
+[Wait][Next]
+But now it's finally time...[BR]
+[Wait][Next]
+Time I destroy 2025 once and for[BR]
+all![Wait][End]
+}
+
+#message:2F:002
+{
+[Style Narrate]Every single month I've prepared[BR]
+something.[BR]
+[Wait][Next]
+In [Color:07]January[Color:00][Pause 10] I selected...
+[Yield][End]
+}
+
+#message:2F:003
+{
+[Style Narrate]In [Color:07]February[Color:00][Pause 10] I selected...
+[Yield][End]
+}
+
+#message:2F:004
+{
+[Style Narrate]In [Color:07]March[Color:00][Pause 10] I selected...
+[Yield][End]
+}
+
+#message:2F:005
+{
+[Style Narrate]In [Color:07]April[Color:00][Pause 10] I selected...
+[Yield][End]
+}
+
+#message:2F:006
+{
+[Style Narrate]In [Color:07]May[Color:00] I was so enraged by the[BR]
+fact that it was the fifth month,[BR]
+[Wait][Next]
+that I spent the whole month[BR]
+training my strength.[Wait][End]
+}
+
+#message:2F:007
+{
+[Style Narrate]In [Color:07]June[Color:00] I rested, because the[BR]
+training from the previous month[BR]
+was exhausting.[Wait][End]
+}
+
+#message:2F:008
+{
+[Style Narrate]In [Color:07]July[Color:00][Pause 10] I selected...
+[Yield][End]
+}
+
+#message:2F:009
+{
+[Style Narrate]In [Color:07]August[Color:00][Pause 10] I selected...
+[Yield][End]
+}
+
+#message:2F:00A
+{
+[Style Narrate]In [Color:07]September[Color:00][Pause 10] I selected...
+[Yield][End]
+}
+
+#message:2F:00B
+{
+[Style Narrate]In [Color:07]October[Color:00][Pause 10] I selected...
+[Yield][End]
+}
+
+#message:2F:00C
+{
+[Style Narrate]In [Color:07]November[Color:00][Pause 10] I selected...
+[Yield][End]
+}
+
+#message:2F:00D
+{
+[Style Narrate]In [Color:07]December[Color:00][Pause 10] I selected...
+[Yield][End]
+}
+
+#message:2F:00E
+{
+[Style Choice pos=110,90 size=100,62]
+[StartChoice]
+[Option 0]+10 HP[BR]
+[Option 1]+[Color 32]5[Color 10] FP[BR]
+[Option 2]+3 BP[BR]
+[EndChoice][End]
+}
+
+#message:2F:01F
+{
+[Style Right]What are [Shake][PrintRising]you[/fx][/fx] doing here????[BR]
+[Wait][Next]
+It's not like you have to rescue[BR]
+anyone, 5 is already here and[BR]
+having a great time![BR]
+[Wait][Next]
+Do you just... [Pause 10]hate 2025[BR]
+specifically?[Wait][End]
+}
+
+#message:2F:020
+{
+[Style Right]Well alright, let's fight I guess...[Wait][End]
+}
+
+#message:2F:(ChoiceFebruary)
+{
+[Style Choice pos=95,90 size=140,62]
+[StartChoice]
+[Option 0]Ultra Hammer[BR]
+[Option 1]Ultra Boots[BR]
+[Option 2]+2 Star Energy[BR]
+[EndChoice][End]
+}
+
+#message:2F:(ChoiceMarch)
+{
+[Style Choice pos=95,90 size=140,62]
+[StartChoice]
+[Option 0]Ultra Shroom[BR]
+[Option 1]Jammin Jelly[BR]
+[Option 2]Repel Gel[BR]
+[EndChoice][End]
+}
+
+#message:2F:(ChoiceApril)
+{
+[Style Choice pos=95,90 size=120,46]
+[StartChoice]
+[Option 0]P-Up D-Down[BR]
+[Option 1]P-Down D-Up[BR]
+[EndChoice][End]
+}
+
+#message:2F:(ChoiceJuly)
+{
+[Style Choice pos=60,90 size=210,62]
+[StartChoice]
+[Option 0]Damage Dodge[BR]
+[Option 1]Defend Plus[BR]
+[Option 2]Chill Out (Muskular)[BR]
+[EndChoice][End]
+}
+
+#message:2F:(ChoiceAugust)
+{
+[Style Choice pos=120,90 size=100,62]
+[StartChoice]
+[Option 0]Sushie[BR]
+[Option 1]Watt[BR]
+[Option 2]Bow[BR]
+[EndChoice][End]
+}
+
+#message:2F:(ChoiceSeptember)
+{
+[Style Choice pos=120,90 size=100,62]
+[StartChoice]
+[Option 0]Slow Go[BR]
+[Option 1]Slow Go[BR]
+[Option 2]Slow Go[BR]
+[EndChoice][End]
+}
+
+#message:2F:(ChoiceOctober)
+{
+[Style Choice pos=95,90 size=140,62]
+[StartChoice]
+[Option 0]Pretty Lucky[BR]
+[Option 1]Life Shroom[BR]
+[Option 2]Power Bounce[BR]
+[EndChoice][End]
+}
+
+#message:2F:(ChoiceNovember)
+{
+[Style Choice pos=110,90 size=110,46]
+[StartChoice]
+[Option 0]Power Jump[BR]
+[Option 1]Power Smash[BR]
+[EndChoice][End]
+}
+
+#message:2F:(ChoiceDecember)
+{
+[Style Choice pos=95,90 size=140,62]
+[StartChoice]
+[Option 0]Shooting Star[BR]
+[Option 1]Yummy Meal[BR]
+[Option 2]Stop Watch[BR]
+[EndChoice][End]
 }
