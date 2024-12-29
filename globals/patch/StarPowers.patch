@@ -1,0 +1,19 @@
+#export:Data $Data_StarSpiritCount {
+    4`
+}
+
+% patch inside btl_state_update_player_menu
+% forces amount of star powers shown to 3
+@Hook:Battle 802A64B0 {
+    LI V0, $Data_StarSpiritCount
+    LW V1, 0 (V0)
+    ADDIU V0, R0, 155
+    J 802A64B8
+}
+
+@Hook:Battle 802A6558 {
+    LI V0, $Data_StarSpiritCount
+    LW V0, 0 (V0)
+    ADDIU S3, S3, 0001
+    J 802A6560
+}
