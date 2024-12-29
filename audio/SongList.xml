@@ -3,7 +3,7 @@
 <SongList>
 	<Song id="00" BGM="bgm/26_210.bgm" x="bk/A1_SPC0.bk"/> <!-- ToadTown -->
 	<Song id="01" BGM="bgm/2F_104.bgm"/>
-	<Song id="02" BGM="bgm/00_117.bgm"/> <!-- NormalBattle -->
+	<Song id="02" BGM="bgm/MMBNBattleTheme.bgm"/> <!-- NormalBattle -->
 	<Song id="03" BGM="bgm/01_118.bgm"/> <!-- SpecialBattle -->
 	<Song id="04" BGM="bgm/0D_184.bgm"/> <!-- JrTroopaBattle -->
 	<Song id="05" BGM="bgm/0E_187.bgm"/> <!-- FinalBowserBattle -->
