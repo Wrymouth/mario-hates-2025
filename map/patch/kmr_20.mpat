@@ -78,6 +78,7 @@
 @ $Script_Main
 {
     0:  Set   *GB_WorldLocation  .Location:MariosHouse
+        Set   *GF_Map_MariosHouse  .True
    10:  Call  GetEntryID    ( *Var0 )
    20:  If  *Var0  ==  ~Entry:Entry2
    30:  	Set   *GB_StoryProgress  .Story:Epilogue
