@@ -1,5 +1,5 @@
 #new:FormationTable $FormationTable_NYE {
-    "2022Boss" 00000004 $Formation_00 $Stage_Nye00 00000000
+    "2025Boss" 00000004 $Formation_00 $Stage_Nye00 00000000
 	00000000 00000000 00000000 00000000 00000000
 }
 
@@ -81,7 +81,7 @@
 }
 
 #new:Actor $Five {
-    [Index]        D5b 
+    [Index]        D6b 
     [Level]        40`b 
     [MaxHP]        30`b 
     [Coins]         1`b 
