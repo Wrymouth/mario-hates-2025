@@ -62,5 +62,38 @@
 				<Command val="2000"/>
 			</Component>
 		</Animation>
+		<Animation name="Anim_02">
+			<Component xyz="0,-40,0">
+				<Command val="1000"/>
+				<Command val="A"/>
+				<Command val="1001"/>
+				<Command val="A"/>
+				<Command val="1002"/>
+				<Command val="A"/>
+				<Command val="1003"/>
+				<Command val="A"/>
+				<Command val="1004"/>
+				<Command val="A"/>
+				<Command val="1005"/>
+				<Command val="A"/>
+				<Command val="1006"/>
+				<Command val="A"/>
+				<Command val="1007"/>
+				<Command val="A"/>
+				<Command val="1008"/>
+				<Command val="A"/>
+				<Command val="1009"/>
+				<Command val="A"/>
+				<Command val="100A"/>
+				<Command val="A"/>
+				<Command val="100B"/>
+				<Command val="A"/>
+				<Command val="100C"/>
+				<Command val="A"/>
+				<Command val="100D"/>
+				<Command val="A"/>
+				<Command val="2000"/>
+			</Component>
+		</Animation>
 	</AnimationList>
 </SpriteSheet>

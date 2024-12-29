@@ -83,7 +83,7 @@
 #new:Actor $Five {
     [Index]        D6b 
     [Level]        40`b 
-    [MaxHP]        30`b 
+    [MaxHP]        25`b 
     [Coins]         1`b 
     [Flags]       00000000 
     [StatusTable] $StatusTable_Five
@@ -274,7 +274,7 @@
     % Set *Var0 30`
     Switch *Var0
     Case <= 40`
-        Call SetActorVar ( .Actor:Self 2 0 )
+        Call SetBattleVar ( 2 2 )
         ExecWait $Script_Attack_Firework
     Case <= 80`
         ExecWait $Script_Attack_Jump
@@ -296,7 +296,7 @@
     % Set *Var0 100`
     Switch *Var0
     Case <= 40`
-        Call SetActorVar ( .Actor:Self 2 1 )
+        Call SetBattleVar ( 2 0 )
         ExecWait $Script_Attack_Firework
     Case <= 80`
         ExecWait $Script_Attack_Jump
@@ -312,12 +312,12 @@
     % Set *Var0 100`
     Switch *Var0
     Case <= 40`
-        Call SetActorVar ( .Actor:Self 2 1 )
+        Call SetBattleVar ( 2 5 )
         ExecWait $Script_Attack_Firework
     Case <= 80`
         ExecWait $Script_Attack_Jump
     Case <= 120`
-        ExecWait $Script_Attack_TwoPartner
+        ExecWait $Script_Attack_MultiHit
     EndSwitch
     Return
     End
@@ -327,13 +327,15 @@
     Call UseIdleAnimation ( .Actor:Self .False )
     Call EnableIdleScript  ( .Actor:Self 00000000 )
     Call UseBattleCamPreset ( 00000003 )
-    % if true, actor is zero
-    Call GetActorVar ( .Actor:Self 2 *Var0 )
-    If *Var0 == 1
-        Set *VarC 00EB0101
-    Else
-        Set *VarC 00EA0101
-    EndIf
+    Call GetBattleVar ( 2 *Var0 )
+    Switch *Var0
+        Case == 0
+            Set *VarC 00EB0101
+        Case == 2
+            Set *VarC 00EA0101
+        Case == 5
+            Set *VarC 00EC0101
+    EndSwitch
     Thread
         Wait 10`
         Call SetAnimation ( .Actor:Self 1 *VarC )
@@ -459,7 +461,7 @@
     	EndThread
     	Thread
     		Call  8026BF48  ( 00000001 )
-    		Call  HealActor ( *Var0 00000003 .True )
+    		Call  HealActor ( *Var0 00000005 .True )
     		Call  8026BF48  ( 00000000 )
     	EndThread
     EndIf
@@ -703,6 +705,88 @@
     	ExecWait  DoNormalHit 
     EndCaseGroup
     EndSwitch 
+    Return
+    End
+}
+
+#new:Script $Script_Attack_MultiHit
+{
+    Call UseIdleAnimation ( .Actor:Self .False )
+    Call EnableIdleScript  ( .Actor:Self 00000000 )
+    Call SetAnimation ( .Actor:Self 1 00EC0200 )
+    Call SetTargetActor ( .Actor:Self .Actor:Player )
+    Call UseBattleCamPreset ( 00000002 )
+    % WALK INFRONT MARIO
+    Call GetActorPos ( .Actor:Player *Var0 *Var1 *Var2 )
+    Add *Var0 30`
+    Call SetGoalPos ( .Actor:Self *Var0 *Var1 *Var2 )
+    Call RunToGoal ( .Actor:Self 30` .True )
+    Wait 5`
+    Call  EnemyTestTarget   ( .Actor:Self *VarB ~Flags:DamageType:0 00000000 00000002 00000010 )
+    % MISS
+    Switch *VarB
+    CaseOR == .HitResult:Miss
+    CaseOR == .HitResult:Lucky
+        Call SetActorJumpGravity ( .Actor:Self *Fixed[1.0] )
+        Call GetActorPos ( .Actor:Player *Var0 *Var1 *Var2 )
+        Call JumpToGoal ( .Actor:Self 15` .False .True .True )
+        Call GetActorPos ( .Actor:Player *Var0 *Var1 *Var2 )
+        Sub *Var0 10`
+        Call SetActorJumpGravity ( .Actor:Self *Fixed[0.5] )
+        Call JumpToGoal ( .Actor:Self 5` .False .True .True )
+        Wait 5`
+        ExecWait DoReturnHome
+        Return
+    EndSwitch
+    % HIT
+    Call SetActorJumpGravity ( .Actor:Self *Fixed[1.0] )
+    Call SetGoalToTarget ( .Actor:Self )
+    Call JumpToGoal ( .Actor:Self 15` .False .True .True )
+    Call EnemyDamageTarget ( .Actor:Self *VarB ~Flags:DamageType:0 0 0 1 20 )
+    Call SetActorRotationOffset ( .Actor:Self 0` 40` 0` )
+    Call SetAnimation ( .Actor:Self 1 00EC0202 )
+    Loop 4`
+        Call RandInt (89` *Var0 )
+        Switch *Var0
+            Case <= 14`
+                Set *Var1 15` %Jump Duration
+                Set *Var2 24` %Spin Strength
+                Call SetActorJumpGravity ( .Actor:Self *Fixed[2.0] )
+            Case <= 58`
+                Set *Var1 30` %Jump Duration
+                Set *Var2 12` %Spin Strength
+                Call SetActorJumpGravity ( .Actor:Self *Fixed[1.0] )
+            Case <= 89`
+                Set *Var1 45` %Jump Duration
+                Set *Var2 8` %Spin Strength
+                Call SetActorJumpGravity ( .Actor:Self *Fixed[0.5] )
+            EndSwitch
+        Thread
+            Set *VarA 0`
+            Loop *Var1
+                Add *VarA *Var2
+                Call SetActorRotation ( .Actor:Self 0` 0` *VarA )
+                Wait 1`
+            EndLoop
+        EndThread
+        Call JumpToGoal ( .Actor:Self *Var1 .False .True .True )
+        Call EnemyDamageTarget ( .Actor:Self *VarB ~Flags:DamageType:0 0 0 1 20 )
+        Wait 1`
+    EndLoop
+    Call SetAnimation ( .Actor:Self 1 00EC0200 )
+    Call SetActorRotationOffset ( .Actor:Self 0` 0` 0` )
+    % RETURN HOME
+    Call SetActorJumpGravity ( .Actor:Self *Fixed[1.0] )
+    Call GetActorPos ( .Actor:Player *Var0 *Var1 *Var2 )
+    Add *Var0 30`
+    Call SetGoalPos ( .Actor:Self *Var0 *Var1 *Var2 )
+    Call JumpToGoal ( .Actor:Self 15` .False .True .True )
+    Wait 5`
+    Call SetGoalToHome ( .Actor:Self )
+    Call SetActorSpeed ( .Actor:Self *Fixed[3.0] )
+    Call RunToGoal ( .Actor:Self 0` .True )
+    Call  EnableIdleScript  ( .Actor:Self 00000001 )
+    Call UseIdleAnimation ( .Actor:Self .True )
     Return
     End
 }
