@@ -1,3 +1,65 @@
+#new:Function $Function_HPPlus10
+{
+    JR RA
+    ORI v0, r0, 2
+}
+
+#new:Function $Function_FPPlus5
+{
+    JR RA
+    ORI v0, r0, 2
+}
+
+#new:Function $Function_BPPlus3
+{
+    JR RA
+    ORI v0, r0, 2
+}
+
+#new:Function $Function_GetUltraBoots
+{
+    JR RA
+    ORI v0, r0, 2
+}
+
+#new:Function $Function_GetUltraHammer
+{
+    JR RA
+    ORI v0, r0, 2
+}
+
+#new:Function $Function_SPPlus3
+{
+    JR RA
+    ORI v0, r0, 2
+}
+
+#new:Function $Function_AddChillOut
+{
+    JR RA
+    ORI v0, r0, 2
+}
+
+
+#new:Function $Function_AddSushie
+{
+    JR RA
+    ORI v0, r0, 2
+}
+
+#new:Function $Function_AddWatt
+{
+    JR RA
+    ORI v0, r0, 2
+}
+
+#new:Function $Function_AddBow
+{
+    JR RA
+    ORI v0, r0, 2
+}
+
+
 @ $Script_EnterMap
 {
     Call DisablePlayerInput ( .True )
@@ -6,9 +68,7 @@
     Call GetPlayerPos ( *Var0 *Var1 *Var2 )
     Sub *Var0 60`
     Call SetPlayerPos ( *Var0 *Var1 *Var2 )
-    %
-    % Rest of code here
-    %
+    Exec $Script_HandleChoices
 	Return
 	End
 }
@@ -22,4 +82,126 @@
 	Call  WaitForCam        ( .Cam:Default *Fixed[1.0] )
 	Return
 	End
+}
+
+#new:Script $Script_HandleChoices 
+{
+    Call SetMusicTrack ( 0 .Song:MLPiTFileSelect 0 8 )
+    Call ShowMessageAtScreenPos ( 002F0002 160` 40` )
+    Call ShowChoice ( 002F000E )
+
+    Switch *Var0
+    Case == 0 % HP + 10
+        Call $Function_HPPlus10
+    Case == 1 % FP + 5
+        Call $Function_FPPlus5
+    Case == 2 % BP + 3
+        Call $Function_BPPlus3
+    EndSwitch
+
+    Call SwitchMessage ( 002F0003 )
+    Call ShowChoice ( ~String:ChoiceFebruary )
+    
+    Switch *Var0
+    Case == 0 % Ultra Hammer
+        Call $Function_GetUltraHammer
+    Case == 1 % Ultra Boots
+        Call $Function_GetUltraBoots
+    Case == 2 % SP + 2
+        Call $Function_SPPlus3
+    EndSwitch
+
+    Call SwitchMessage ( 002F0004 )
+    Call ShowChoice ( ~String:ChoiceMarch )
+    
+    Switch *Var0
+    Case == 0 % Ultra Shroom
+        Call AddItem ( .Item:UltraShroom .Item:UltraShroom  )
+    Case == 1 % Jammin Jelly
+        Call AddItem ( .Item:JamminJelly .Item:JamminJelly  )
+    Case == 2 % Repel Gel
+        Call AddItem ( .Item:RepelGel .Item:RepelGel  )
+    EndSwitch
+
+    Call SwitchMessage ( 002F0005 )
+    Call ShowChoice ( ~String:ChoiceApril )
+
+    Switch *Var0
+    Case == 0 % P-Up D-Down
+        Call AddBadge ( .Item:PUpDDown .Item:PUpDDown )
+    Case == 1 % P-Down D-Up
+        Call AddBadge ( .Item:PDownDUp .Item:PDownDUp )
+    EndSwitch
+
+    Call SwitchMessage ( 002F0006 )
+    Call CloseMessage ()
+    Call ShowMessageAtScreenPos ( 002F0007 160` 40` )
+    Call ShowMessageAtScreenPos ( 002F0008 160` 40` )
+    Call ShowChoice ( ~String:ChoiceJuly )
+    
+    Switch *Var0
+    Case == 0 % Damage Dodge
+        Call AddBadge ( .Item:DamageDodgeA .Item:DamageDodgeA )
+    Case == 1 % Defend Plus
+        Call AddBadge ( .Item:DefendPlusA .Item:DefendPlusA )
+    Case == 2 % Chill Out
+        Call $Function_AddChillOut
+    EndSwitch
+    
+    Call SwitchMessage ( 002F0009 )
+    Call ShowChoice ( ~String:ChoiceAugust )
+
+    Switch *Var0
+    Case == 0 % Sushie
+        Call $Function_AddSushie
+    Case == 1 % Watt
+        Call $Function_AddWatt
+    Case == 2 % Bow
+        Call $Function_AddBow
+    EndSwitch
+
+    Call SwitchMessage ( 002F000A )
+    Call ShowChoice ( ~String:ChoiceSeptember )
+
+    Call AddBadge (  .Item:SlowGo .Item:SlowGo )
+    
+    Call SwitchMessage ( 002F000B )
+    Call ShowChoice ( ~String:ChoiceOctober )
+    
+    Switch *Var0
+    Case == 0 % Pretty Lucky
+        Call AddBadge (  .Item:PrettyLucky .Item:PrettyLucky )
+    Case == 1 % Life Shroom
+        Call AddItem (  .Item:LifeShroom .Item:LifeShroom )
+    Case == 2 % Power Bounce
+        Call AddBadge (  .Item:PowerBounce .Item:PowerBounce )
+    EndSwitch
+
+    Call SwitchMessage ( 002F000C )
+    Call ShowChoice ( ~String:ChoiceNovember )
+
+    Switch *Var0
+    Case == 0 % Power Jump
+        Call AddBadge (  .Item:PowerJump .Item:PowerJump )
+    Case == 1 % Power Smash
+        Call AddBadge (  .Item:PowerSmash1 .Item:PowerSmash1 )
+    EndSwitch
+
+    Call SwitchMessage ( 002F000D )
+    Call ShowChoice ( ~String:ChoiceDecember )
+
+    Switch *Var0
+    Case == 0 % Shooting Star
+        Call AddItem (  .Item:ShootingStar .Item:ShootingStar )
+    Case == 1 % Yummy Meal
+        Call AddItem (  .Item:YummyMeal .Item:YummyMeal )
+    Case == 2 % Stop Watch
+        Call AddItem (  .Item:StopWatch .Item:StopWatch )
+    EndSwitch
+
+    Call CloseMessage()
+    Call ShowMessageAtScreenPos ( ~String:ChoicesConclude 160` 40` )
+    Call GotoMap ( "nye_00" 0 )
+    Return
+    End
 }
