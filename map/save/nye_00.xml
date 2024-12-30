@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="nye_00" author="unnamed" textures="hos_tex">
 	<Editor>
-		<Camera pos="86.684151,337.259552,-532.514832" pitch="23.760590" yaw="4.640594"/>
-		<Camera pos="227.594681,65536.000000,-875.239380"/>
+		<Camera pos="37.630127,239.229568,705.810791" pitch="30.480631" yaw="2.400770"/>
+		<Camera pos="53.067871,65536.000000,598.667725"/>
 		<Camera pos="65536.000000,143.555435,-723.377563"/>
 		<Camera pos="181.062347,-52.260284,65536.000000"/>
 	</Editor>
@@ -55,7 +55,7 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="D">
+		<Node name="Root" id="13">
 			<Node name="Entrances" id="0">
 				<Node name="Entry0" id="FFFFFFFF"/>
 			</Node>
@@ -64,13 +64,19 @@
 			<Node name="Ten" id="3"/>
 			<Node name="One" id="4"/>
 			<Node name="SaveBlock" id="5"/>
-			<Node name="HiddenRedBlock" id="6"/>
-			<Node name="MarioPos" id="7"/>
-			<Node name="ZeroPos" id="8"/>
-			<Node name="Two1Pos" id="9"/>
-			<Node name="FivePos" id="A"/>
-			<Node name="Two2Pos" id="B"/>
-			<Node name="CameraPan" id="C"/>
+			<Node name="MarioPos" id="6"/>
+			<Node name="ZeroPos" id="7"/>
+			<Node name="Two1Pos" id="8"/>
+			<Node name="FivePos" id="9"/>
+			<Node name="Two2Pos" id="A"/>
+			<Node name="CameraPan" id="B"/>
+			<Node name="ShootingStarMarker" id="C"/>
+			<Node name="AttackFXBlock1" id="D"/>
+			<Node name="AttackFXBlock2" id="E"/>
+			<Node name="AttackFXBlock3" id="F"/>
+			<Node name="AttackFXBlock4" id="10"/>
+			<Node name="AttackFXBlock5" id="11"/>
+			<Node name="AttackFXBlock6" id="12"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -3297,39 +3303,39 @@
 					<F3DEX2 cmd="D9FFFFFF,200400"/>
 					<TriangleBatch ver="0">
 						<VertexTable>
-							<Vertex xyz="153,0,511" uv="-845,1456" rgba="141,141,199,255"/>
-							<Vertex xyz="172,0,452" uv="-1034,2046" rgba="141,141,199,255"/>
+							<Vertex xyz="153,0,511" uv="-845,2634" rgba="141,141,199,255"/>
+							<Vertex xyz="172,0,452" uv="-1034,2044" rgba="141,141,199,255"/>
 							<Vertex xyz="70,0,452" uv="-16,2045" rgba="183,183,219,255"/>
 							<Vertex xyz="70,0,452" uv="-16,2045" rgba="183,183,219,255"/>
-							<Vertex xyz="103,0,547" uv="-345,1096" rgba="141,141,199,255"/>
+							<Vertex xyz="103,0,547" uv="-345,2994" rgba="141,141,199,255"/>
 							<Vertex xyz="70,0,452" uv="-16,2045" rgba="183,183,219,255"/>
-							<Vertex xyz="37,0,547" uv="314,1095" rgba="141,141,199,255"/>
+							<Vertex xyz="37,0,547" uv="314,2995" rgba="141,141,199,255"/>
 							<Vertex xyz="70,0,452" uv="-16,2045" rgba="183,183,219,255"/>
-							<Vertex xyz="-13,0,511" uv="814,1456" rgba="141,141,199,255"/>
+							<Vertex xyz="-13,0,511" uv="814,2634" rgba="141,141,199,255"/>
 							<Vertex xyz="70,0,452" uv="-16,2045" rgba="183,183,219,255"/>
 							<Vertex xyz="-32,0,452" uv="1004,2045" rgba="141,141,199,255"/>
 							<Vertex xyz="70,0,452" uv="-16,2045" rgba="183,183,219,255"/>
-							<Vertex xyz="-13,0,393" uv="813,2635" rgba="141,141,199,255"/>
+							<Vertex xyz="-13,0,393" uv="813,1455" rgba="141,141,199,255"/>
 							<Vertex xyz="70,0,452" uv="-16,2045" rgba="183,183,219,255"/>
-							<Vertex xyz="37,0,357" uv="313,2996" rgba="141,141,199,255"/>
+							<Vertex xyz="37,0,357" uv="313,1094" rgba="141,141,199,255"/>
 							<Vertex xyz="70,0,452" uv="-16,2045" rgba="183,183,219,255"/>
-							<Vertex xyz="103,0,357" uv="-344,2996" rgba="141,141,199,255"/>
+							<Vertex xyz="103,0,357" uv="-344,1094" rgba="141,141,199,255"/>
 							<Vertex xyz="70,0,452" uv="-16,2045" rgba="183,183,219,255"/>
-							<Vertex xyz="153,0,393" uv="-844,2636" rgba="141,141,199,255"/>
+							<Vertex xyz="153,0,393" uv="-844,1454" rgba="141,141,199,255"/>
 							<Vertex xyz="70,0,452" uv="-16,2045" rgba="183,183,219,255"/>
-							<Vertex xyz="172,0,452" uv="-1034,2046" rgba="141,141,199,255"/>
+							<Vertex xyz="172,0,452" uv="-1034,2044" rgba="141,141,199,255"/>
 							<Vertex xyz="70,0,452" uv="-16,2045" rgba="183,183,219,255"/>
-							<Vertex xyz="234,0,570" uv="-1655,866" rgba="93,93,175,255"/>
-							<Vertex xyz="272,0,452" uv="-2034,2046" rgba="93,93,175,255"/>
-							<Vertex xyz="134,0,642" uv="-654,146" rgba="93,93,175,255"/>
-							<Vertex xyz="6,0,642" uv="623,145" rgba="93,93,175,255"/>
-							<Vertex xyz="-94,0,570" uv="1624,866" rgba="93,93,175,255"/>
-							<Vertex xyz="-128,0,452" uv="1963,2046" rgba="93,93,175,255"/>
-							<Vertex xyz="-94,0,334" uv="1623,3226" rgba="93,93,175,255"/>
-							<Vertex xyz="6,0,262" uv="624,3946" rgba="93,93,175,255"/>
-							<Vertex xyz="134,0,262" uv="-655,3946" rgba="93,93,175,255"/>
-							<Vertex xyz="234,0,334" uv="-1655,3226" rgba="93,93,175,255"/>
-							<Vertex xyz="272,0,452" uv="-2034,2046" rgba="93,93,175,255"/>
+							<Vertex xyz="234,0,570" uv="-1655,3224" rgba="93,93,175,255"/>
+							<Vertex xyz="272,0,452" uv="-2034,2044" rgba="93,93,175,255"/>
+							<Vertex xyz="134,0,642" uv="-654,3944" rgba="93,93,175,255"/>
+							<Vertex xyz="6,0,642" uv="623,3945" rgba="93,93,175,255"/>
+							<Vertex xyz="-94,0,570" uv="1624,3224" rgba="93,93,175,255"/>
+							<Vertex xyz="-128,0,452" uv="1963,2044" rgba="93,93,175,255"/>
+							<Vertex xyz="-94,0,334" uv="1623,864" rgba="93,93,175,255"/>
+							<Vertex xyz="6,0,262" uv="624,144" rgba="93,93,175,255"/>
+							<Vertex xyz="134,0,262" uv="-655,144" rgba="93,93,175,255"/>
+							<Vertex xyz="234,0,334" uv="-1655,864" rgba="93,93,175,255"/>
+							<Vertex xyz="272,0,452" uv="-2034,2044" rgba="93,93,175,255"/>
 						</VertexTable>
 						<TriangleList>
 							<Triangle ijk="0,1,2"/>
@@ -4388,51 +4394,69 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="D"/>
+			<MapObject name="Root" id="13"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="-85,62,452" yaw="90.000000">
+			<MapObject name="AttackFXBlock6" id="12"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="-39,62,563" yaw="45.000000">
+			<MapObject name="AttackFXBlock5" id="11"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="70,62,604" yaw="0.000000">
+			<MapObject name="AttackFXBlock4" id="10"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="179,62,563" yaw="-45.000000">
+			<MapObject name="AttackFXBlock3" id="F"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="225,62,452" yaw="-90.000000">
+			<MapObject name="AttackFXBlock2" id="E"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="179,62,341" yaw="-135.000000">
+			<MapObject name="AttackFXBlock1" id="D"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="70,200,-1103" yaw="0.000000">
+			<MapObject name="ShootingStarMarker" id="C"/>
 		</Marker>
 		<Marker ver="4" type="CamTarget" pos="70,243,-588" yaw="-135.000000">
-			<MapObject name="CameraPan" id="C" hidden="true"/>
+			<MapObject name="CameraPan" id="B"/>
 			<CamTarget sampleZone="true" generatePan="true" panSpeed="1.000000" overrideLength="700.000000" overrideAngles="12.000000,-2.000000"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="120,160,-688" yaw="-45.000000">
-			<MapObject name="Two2Pos" id="B" hidden="true"/>
+			<MapObject name="Two2Pos" id="A"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="195,160,-638" yaw="-45.000000">
-			<MapObject name="FivePos" id="A" hidden="true"/>
+			<MapObject name="FivePos" id="9"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-55,160,-638" yaw="-135.000000">
-			<MapObject name="Two1Pos" id="9" hidden="true"/>
+			<MapObject name="Two1Pos" id="8"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="20,160,-688" yaw="-135.000000">
-			<MapObject name="ZeroPos" id="8" hidden="true"/>
+			<MapObject name="ZeroPos" id="7"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="70,160,-588" yaw="-135.000000">
-			<MapObject name="MarioPos" id="7" hidden="true"/>
-		</Marker>
-		<Marker ver="4" type="Position" pos="179,62,341" yaw="-135.000000">
-			<MapObject name="HiddenRedBlock" id="6" hidden="true"/>
+			<MapObject name="MarioPos" id="6"/>
 		</Marker>
 		<Marker ver="4" type="Entity" pos="-40,62,340" yaw="-225.000000">
-			<MapObject name="SaveBlock" id="5" hidden="true"/>
+			<MapObject name="SaveBlock" id="5"/>
 			<Entity type="802E9A18"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="302,200,-824" yaw="-90.000000">
-			<MapObject name="One" id="4" hidden="true"/>
+			<MapObject name="One" id="4"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="EC" palette="0" animations="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="159,200,-903" yaw="-90.000000">
-			<MapObject name="Ten" id="3" hidden="true"/>
+			<MapObject name="Ten" id="3"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="EA" palette="0" animations="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="-19,200,-903" yaw="-90.000000">
-			<MapObject name="Hundred" id="2" hidden="true"/>
+			<MapObject name="Hundred" id="2"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="EB" palette="0" animations="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="-162,200,-824" yaw="-90.000000">
-			<MapObject name="Thousand" id="1" hidden="true"/>
+			<MapObject name="Thousand" id="1"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="EA" palette="0" animations="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
@@ -4440,7 +4464,7 @@
 			<MapObject name="Entrances" id="0"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="70,30,452" yaw="180.000000">
-			<MapObject name="Entry0" id="FFFFFFFF" hidden="true"/>
+			<MapObject name="Entry0" id="FFFFFFFF"/>
 		</Marker>
 	</Markers>
 	<ScriptData>

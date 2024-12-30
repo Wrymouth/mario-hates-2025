@@ -125,3 +125,26 @@
     [EntryCount] 2
     [MapTattle] 00190189
 }
+
+@ $Script_MakeEntities
+{
+	Call  MakeEntity    ( .Entity:SavePoint ~Vec4d:SaveBlock 80000000 )
+    Call  MakeEntity        ( .Entity:HiddenRedBlock ~Vec4d:AttackFXBlock1 .Item:AttackFXA 80000000 )
+    Call  MakeEntity        ( .Entity:HiddenRedBlock ~Vec4d:AttackFXBlock2 .Item:AttackFXB 80000000 )
+    Call  MakeEntity        ( .Entity:HiddenRedBlock ~Vec4d:AttackFXBlock3 .Item:AttackFXC 80000000 )
+    Call  MakeEntity        ( .Entity:HiddenRedBlock ~Vec4d:AttackFXBlock4 .Item:AttackFXD 80000000 )
+    Call  MakeEntity        ( .Entity:HiddenRedBlock ~Vec4d:AttackFXBlock5 .Item:AttackFXE 80000000 )
+    Call  MakeEntity        ( .Entity:HiddenRedBlock ~Vec4d:AttackFXBlock6 .Item:AttackFXF 80000000 )
+    Call  AssignBlockFlag   ( *GF_ARN03_ItemBlock_Coin )
+	Return
+	End
+}
+
+@ $Script_SetupMusic
+{
+
+    Call SetMusicTrack ( 0 .Song:MilkyWayLegend 0 8 )
+	Call  ClearAmbientSounds ( 250` )
+	Return
+	End
+}
