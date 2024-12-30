@@ -167,6 +167,7 @@
 {
     If *MF_StatsGiven == .False
         Set *GB_StarSpiritCount 2`
+        Set *GF_Tutorial_SaveBlock .True
         Call $GivePlayerStartingStats (  )
         Set *MF_StatsGiven .True
         Call  GetEntryID    ( *Var0 )

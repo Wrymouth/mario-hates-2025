@@ -59,6 +59,7 @@
 }
 
 #new:Script $Script_Idle_2022 {
+    Exec $Script_VolumeControl
     Call AwaitPlayerApproach ( ~Vec2D:MarioPos 215` )
     ExecWait $Script_BattleCutscene
     Return
@@ -87,6 +88,8 @@
 
 #new:Script $Script_BattleCutscene {
     Call DisablePlayerInput ( .True )
+    Set *MapFlag[00] .True
+    Call SetMusicTrack ( 0 .Song:ForeverForestWarning 0 8 )
     Call SpeakToPlayer ( 1 00EA0000 00EA0000 5 002F001F )
     Call PlayerMoveTo ( ~Vec2D:MarioPos 110` )
     ExecWait $Script_PanCamera_CameraPan
@@ -147,4 +150,25 @@
 	Call  ClearAmbientSounds ( 250` )
 	Return
 	End
+}
+
+#new:Script $Script_VolumeControl
+{
+    Loop
+        If *MapFlag[00] == .True
+            BreakLoop
+        EndIf
+        Call GetPlayerPos ( 0` 0` *Var0 )
+        Switch *Var0
+            Case >= 262`
+                Call SetMusicTrack ( 0 .Song:MilkyWayLegend 0 6 )
+            Case >= 42`
+                Call SetMusicTrack ( 0 .Song:MilkyWayLegend 0 4 )
+            Case >= -178`
+                Call SetMusicTrack ( 0 .Song:MilkyWayLegend 0 2 )
+        EndSwitch
+        Wait 1`
+    EndLoop
+    Return
+    End
 }
