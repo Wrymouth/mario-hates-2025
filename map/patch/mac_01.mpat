@@ -135,16 +135,16 @@
   Call SetPlayerPos ( 0 0 0 )
   Call SetCamSpeed ( .Cam:Default *Fixed[90.0] )
   Thread
-    Call SpeakToPlayer ( 13 00B60008 00B60001 0  ~String:Countdown )
+    Set *Var0 60`
+    % 10
+    Loop 10`
+      Call RotateModel ( ~Model:LongArrow *Var0 0 0 1 )
+      Call RotateModel ( ~Model:LongArrowHead *Var0 0 0 1 )
+      Wait 36`
+      Sub *Var0 6
+    EndLoop
   EndThread
-  Set *Var0 60`
-  % 10
-  Loop 10`
-    Call RotateModel ( ~Model:LongArrow *Var0 0 0 1 )
-    Call RotateModel ( ~Model:LongArrowHead *Var0 0 0 1 )
-    Wait 36`
-    Sub *Var0 6
-  EndLoop
+  Call SpeakToPlayer ( 13 00B60008 00B60001 0  ~String:Countdown )
   Wait 30`
   Call ShowMessageAtScreenPos ( ~String:DiaryEntryEnding 160` 40` )
   Call DisablePlayerInput ( .False )

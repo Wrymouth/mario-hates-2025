@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="nye_00" author="unnamed" textures="hos_tex">
 	<Editor>
-		<Camera pos="145.383911,386.890076,352.408539" pitch="40.880627" yaw="6.720988"/>
+		<Camera pos="143.900742,410.386871,400.378143" pitch="25.520636" yaw="0.480988"/>
 		<Camera pos="81.461777,65536.000000,-5.670258"/>
 		<Camera pos="65536.000000,24.376801,-248.212311"/>
 		<Camera pos="335.692383,-127.337463,65536.000000"/>
@@ -94,7 +94,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CylinderModel" id="17" hidden="true"/>
+			<MapObject name="CylinderModel" id="17"/>
 			<ShapeMesh ver="3" texture="hos_h_sinden2tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -324,7 +324,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CylinderModel" id="16" hidden="true"/>
+			<MapObject name="CylinderModel" id="16"/>
 			<ShapeMesh ver="3" texture="hos_h_sinden2tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -554,7 +554,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CylinderModel" id="15" hidden="true"/>
+			<MapObject name="CylinderModel" id="15"/>
 			<ShapeMesh ver="3" texture="hos_h_sinden2tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -784,7 +784,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0" panUnit="3">
-			<MapObject name="Two1Pillar" id="14" hidden="true"/>
+			<MapObject name="Two1Pillar" id="14"/>
 			<ShapeMesh ver="3" texture="hos_sterlighttif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -996,7 +996,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0" panUnit="3">
-			<MapObject name="ZeroPillar" id="13" hidden="true"/>
+			<MapObject name="ZeroPillar" id="13"/>
 			<ShapeMesh ver="3" texture="hos_sterlighttif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1208,7 +1208,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0" panUnit="3">
-			<MapObject name="Two2Pillaer" id="12" hidden="true"/>
+			<MapObject name="Two2Pillaer" id="12"/>
 			<ShapeMesh ver="3" texture="hos_sterlighttif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1420,7 +1420,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0" panUnit="3">
-			<MapObject name="FivePillar" id="11" hidden="true"/>
+			<MapObject name="FivePillar" id="11"/>
 			<ShapeMesh ver="3" texture="hos_sterlighttif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1524,7 +1524,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Split Model" id="10" hidden="true"/>
+			<MapObject name="Split Model" id="10"/>
 			<ShapeMesh ver="3" texture="hos_stargatetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1576,7 +1576,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Split Model" id="F" hidden="true"/>
+			<MapObject name="Split Model" id="F"/>
 			<ShapeMesh ver="3" texture="hos_stargatetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1628,7 +1628,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Split Model" id="E" hidden="true"/>
+			<MapObject name="Split Model" id="E"/>
 			<ShapeMesh ver="3" texture="hos_stargatetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1680,7 +1680,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Split Model" id="D" hidden="true"/>
+			<MapObject name="Split Model" id="D"/>
 			<ShapeMesh ver="3" texture="hos_stargatetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1717,7 +1717,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CylinderModel" id="C" hidden="true"/>
+			<MapObject name="CylinderModel" id="C"/>
 			<ShapeMesh ver="3" texture="hos_h_sinden2tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1917,7 +1917,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0" panUnit="2">
-			<MapObject name="StarRoad2" id="B" hidden="true"/>
+			<MapObject name="StarRoad2" id="B"/>
 			<ShapeMesh ver="3" texture="hos_sterlighttif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1961,7 +1961,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0" panUnit="2">
-			<MapObject name="StarRoad" id="A" hidden="true"/>
+			<MapObject name="StarRoad" id="A"/>
 			<ShapeMesh ver="3" texture="hos_sterlighttif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1995,7 +1995,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CylinderModel" id="9" hidden="true"/>
+			<MapObject name="CylinderModel" id="9"/>
 			<ShapeMesh ver="3" texture="hos_h_sinden2tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2267,7 +2267,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Planar GridModel" id="8" hidden="true"/>
+			<MapObject name="Planar GridModel" id="8"/>
 			<ShapeMesh ver="3" texture="hos_h_renga3tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2479,7 +2479,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0" panUnit="1">
-			<MapObject name="UpperStars" id="7" hidden="true"/>
+			<MapObject name="UpperStars" id="7"/>
 			<ShapeMesh ver="3" texture="hos_sterlighttif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2659,7 +2659,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Radial GridModel" id="6" hidden="true"/>
+			<MapObject name="Radial GridModel" id="6"/>
 			<ShapeMesh ver="3" texture="hos_stargatetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2839,7 +2839,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="DrawnModel" id="5" hidden="true"/>
+			<MapObject name="DrawnModel" id="5"/>
 			<ShapeMesh ver="3" texture="hos_stargatetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2870,7 +2870,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Planar GridModel" id="4" hidden="true"/>
+			<MapObject name="Planar GridModel" id="4"/>
 			<ShapeMesh ver="3" texture="hos_h_renga3tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3056,7 +3056,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CylinderModel" id="3" hidden="true"/>
+			<MapObject name="CylinderModel" id="3"/>
 			<ShapeMesh ver="3" texture="hos_h_sinden2tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3118,7 +3118,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0" panUnit="0">
-			<MapObject name="LowerStars" id="2" hidden="true"/>
+			<MapObject name="LowerStars" id="2"/>
 			<ShapeMesh ver="3" texture="hos_sterlighttif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3298,7 +3298,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Radial GridModel" id="1" hidden="true"/>
+			<MapObject name="Radial GridModel" id="1"/>
 			<ShapeMesh ver="3" texture="hos_stargatetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3391,7 +3391,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o377" id="0" hidden="true"/>
+			<MapObject name="o377" id="0"/>
 			<ShapeMesh ver="3" texture="kmr_t_dokankun3tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>

@@ -1284,9 +1284,45 @@ tex: mac_wood_pole_btif
 	combine: 8
 }
 
-tex: mac_clock
+tex: mac_clockRU
 {
-	img: mac_clock.png
+	img: mac_clockRU.png
+	{
+		format: CI-4
+		hwrap: clamp
+		vwrap: clamp
+	}
+	filter: yes
+	combine: 8
+}
+
+tex: mac_clockRD
+{
+	img: mac_clockRD.png
+	{
+		format: CI-4
+		hwrap: clamp
+		vwrap: clamp
+	}
+	filter: yes
+	combine: 8
+}
+
+tex: mac_clockLU
+{
+	img: mac_clockLU.png
+	{
+		format: CI-4
+		hwrap: clamp
+		vwrap: clamp
+	}
+	filter: yes
+	combine: 8
+}
+
+tex: mac_clockLD
+{
+	img: mac_clockLD.png
 	{
 		format: CI-4
 		hwrap: clamp
