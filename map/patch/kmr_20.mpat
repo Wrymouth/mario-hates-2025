@@ -166,6 +166,7 @@
 @ $Script_Main
 {
     If *MF_StatsGiven == .False
+        Set *GB_StarSpiritCount 2`
         Call $GivePlayerStartingStats (  )
         Set *MF_StatsGiven .True
         Call  GetEntryID    ( *Var0 )

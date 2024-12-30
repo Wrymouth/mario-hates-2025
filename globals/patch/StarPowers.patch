@@ -1,21 +1,26 @@
-% Will be read during battle to overwrite the
-% amount of star spirits you have
-#export:Data $Data_StarSpiritCount {
-    2`
-}
+
 
 % patch inside btl_state_update_player_menu
 % forces amount of star powers shown to 3
 @Hook:Battle 802A64B0 {
-    LI V0, $Data_StarSpiritCount
-    LW V1, 0 (V0)
+    PUSH A0, A1, RA
+    LI A1, *GB_StarSpiritCount
+    JAL ~Func:get_variable
+    LI A0, 0
+    POP A0, A1, RA
+
+    ADD v1, r0, v0
     ADDIU V0, R0, 155
     J 802A64B8
 }
 
 @Hook:Battle 802A6558 {
-    LI V0, $Data_StarSpiritCount
-    LW V0, 0 (V0)
+    PUSH A0, A1, RA
+    LI A1, *GB_StarSpiritCount
+    JAL ~Func:get_variable
+    LI A0, 0
+    POP A0, A1, RA
+
     ADDIU S3, S3, 0001
     J 802A6560
 }

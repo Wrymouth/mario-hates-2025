@@ -66,17 +66,6 @@
     ORI v0, r0, 2
 }
 
-#new:Function $Function_AddChillOut
-{
-    LI t0, $Data_StarSpiritCount
-    LW t1, 0 (t0)
-    ADDIU t1, t1, 1
-    SW t1, 0 (t0)
-
-    JR RA
-    ORI v0, r0, 2
-}
-
 #new:Function $Function_AddGoombario
 {
     LIO t0, 8010F290
@@ -216,7 +205,7 @@
     Case == 1 % Defend Plus
         Call AddBadge ( .Item:DefendPlusA .Item:DefendPlusA )
     Case == 2 % Chill Out
-        Call $Function_AddChillOut
+        Add *GB_StarSpiritCount 1`
     EndSwitch
     
     Call SwitchMessage ( 002F0009 )
