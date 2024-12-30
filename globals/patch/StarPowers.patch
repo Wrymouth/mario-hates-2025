@@ -1,3 +1,5 @@
+% Will be read during battle to overwrite the
+% amount of star spirits you have
 #export:Data $Data_StarSpiritCount {
     4`
 }
