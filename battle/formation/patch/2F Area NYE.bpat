@@ -117,30 +117,30 @@
 #new:StatusTable $StatusTable_Two {
     .Status:Normal      0`
     .Status:Default     0`
-    .Status:Sleep      80`
+    .Status:Sleep       0`
     .Status:Dizzy      60`
     .Status:Stop       60`
-    .Status:Paralyze   60`
+    .Status:Paralyze   30`
     .Status:End
 }
 
 #new:StatusTable $StatusTable_Zero {
     .Status:Normal      0`
     .Status:Default     0`
-    .Status:Sleep      60`
-    .Status:Dizzy      60`
+    .Status:Sleep       0`
+    .Status:Dizzy      30`
     .Status:Stop       60`
-    .Status:Paralyze   70`
+    .Status:Paralyze   60`
     .Status:End
 }
 
 #new:StatusTable $StatusTable_Five {
     .Status:Normal      0`
     .Status:Default     0`
-    .Status:Sleep      50`
-    .Status:Dizzy      60`
+    .Status:Sleep       0`
+    .Status:Dizzy      50`
     .Status:Stop       60`
-    .Status:Paralyze   60`
+    .Status:Paralyze   50`
     .Status:End
 }
 

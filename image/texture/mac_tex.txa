@@ -1284,3 +1284,14 @@ tex: mac_wood_pole_btif
 	combine: 8
 }
 
+tex: mac_clock
+{
+	img: mac_clock.png
+	{
+		format: CI-4
+		hwrap: clamp
+		vwrap: clamp
+	}
+	filter: yes
+	combine: 8
+}
