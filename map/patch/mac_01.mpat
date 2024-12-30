@@ -2,3 +2,152 @@
 {
   [A4]  LA        A3, $Global_ItemHudScripts
 }
+
+@ $Script_Main
+{
+    0:  Set   *GB_WorldLocation  .Location:ToadTown
+        Set *GB_StoryProgress .Story:Epilogue
+   10:  Call  SetSpriteShading  ( .Shading:None )
+   20:  Call  SetCamPerspective ( .Cam:Default 00000003  25`  90`  4096` )
+   40:  Call  SetCamBGColor     ( .Cam:Default  0`  0`  0` )
+   5C:  Call  SetCamEnabled     ( .Cam:Default .True )
+   70:  Call  SetCamLeadPlayer  ( .Cam:Default .False )
+   84:  Set   *AreaFlag[00E]  .False
+   94:  Set   *AreaFlag[00F]  .False
+   A4:  Set   *AreaFlag[010]  .False
+   B4:  Set   *AreaFlag[011]  .False
+   C4:  Set   *AreaFlag[012]  .False
+   D4:  Set   *AreaFlag[013]  .False
+   E4:  Set   *AreaFlag[014]  .False
+   F4:  Set   *AreaFlag[015]  .False
+  104:  If  *GB_StoryProgress  <  .Story:Epilogue % 60
+  114:  	Exec  $Script_80248070
+  120:  Else
+  128:  	Call  EnableGroup   ( ~Model:jutan1 .False )
+  13C:  EndIf
+  144:  Switch  *GB_StoryProgress
+  150:  	Case  ==  .Story:Intro % FFFFFF80
+  15C:  		Call  MakeNpcs  ( .False $NpcGroupList_8025FA2C )
+  170:  	Case  >=  .Story:Epilogue % 60
+  17C:  		Call  MakeNpcs  ( .False $NpcGroupList_80261830 )
+  190:  	Case  <  .Story:Ch1_MerlinRevealedKoopaBros % FFFFFF9C
+  19C:  		Call  MakeNpcs  ( .False $NpcGroupList_8025EFF0 )
+  1B0:  	Case  <  .Story:Ch1_StarSpritDeparted % FFFFFFB5
+  1BC:  		Call  MakeNpcs  ( .False $NpcGroupList_8025F044 )
+  1D0:  	Case  ==  .Story:Ch1_DefeatedJrTroopa % FFFFFFB6
+  1DC:  		Call  MakeNpcs  ( .False $NpcGroupList_8025F080 )
+  1F0:  	Case  .Story:Ch3_StarSpritDeparted  to  .Story:Ch4_StarSpiritRescued % FFFFFFF3 to 5
+  200:  		Call  MakeNpcs  ( .False $NpcGroupList_8025F0BC )
+  214:  	Case  ==  .Story:Ch6_ReturnedToToadTown % 3C
+  220:  		Call  MakeNpcs  ( .False $NpcGroupList_8025F0F8 )
+  234:  	Default
+  23C:  		Call  MakeNpcs  ( .False $NpcGroupList_8025EFA8 )
+  250:  EndSwitch
+  258:  If  *GB_StoryProgress  >=  .Story:Ch1_MerlinRevealedKoopaBros % FFFFFF9C
+  268:  	Call  ModifyColliderFlags   ( 00000000 ~Collider:tt 7FFFFE00 )
+  280:  EndIf
+  288:  Exec  $Script_8025A2F0
+  294:  Exec  $Script_MakeEntities
+  2A0:  Exec  $Script_80247D18
+  2AC:  Exec  $Script_80248818
+  2B8:  Exec  $Script_80248428
+  2C4:  Exec  $Script_80246770
+  2D0:  Call  UseDoorSounds ( .DoorSounds:Large )
+  2E0:  Call  UseAdvancedDoorSounds ( .DoorSounds:Basic )
+  2F0:  Exec  $Script_EnterWalk_80246C94
+  2FC:  Wait  1`
+  308:  Call  EnableTexPanning      ( ~Model:hikari .True )
+  31C:  Thread
+  324:  	SetGroup  00000000
+  330:  	Set   *Var0  00000000
+  340:  	Set   *Var1  00000000
+  350:  	Label  0
+  35C:  	Add   *Var0  FFFFFF9C
+  36C:  	Add   *Var1  FFFFFF38
+  37C:  	If  *Var0  <  00000000
+  38C:  		Add   *Var0  00010000
+  39C:  	EndIf
+  3A4:  	If  *Var1  <  00000000
+  3B4:  		Add   *Var0  00010000
+  3C4:  	EndIf
+  3CC:  	Call  SetTexPanOffset   ( 00000003 00000000 *Var0 00000000 )
+  3E8:  	Call  SetTexPanOffset   ( 00000003 00000001 *Var1 *Var1 )
+  404:  	Wait  1`
+  410:  	Goto  0
+  41C:  EndThread
+  424:  Bind  $Script_8024F27C .Trigger:WallPressA ~Collider:o335 00000001 00000000
+  440:  Exec  $Script_8025023C
+  44C:  Exec  $Script_80262604
+  458:  Call  SetCamSpeed   ( .Cam:Default *Fixed[2.0] )
+  46C:  Return
+  474:  End
+}
+
+@ $Script_EnterWalk_80246C94
+{
+    0:  Call  GetLoadType   ( *Var1 )
+   10:  If  *Var1  ==  00000001
+   20:  	Exec  EnterSavePoint
+   2C:  	Exec  $Script_80246BD8
+   38:  	Return
+   40:  EndIf
+   48:  Call  GetEntryID    ( *Var0 )
+   58:  Switch  *Var0
+          Case  == 0
+            ExecWait $Script_NewYearsEnding
+   64:  	Case  ==  ~Entry:Entry2
+   70:  		Call  DisablePlayerInput    ( .True )
+   80:  		Call  ModifyColliderFlags   ( 00000000 ~Collider:deilitn 7FFFFE00 )
+   98:  		Call  RotateGroup   ( ~Model:east_gate 00000050 00000000 00000001 00000000 )
+   B8:  		Call  RotateGroup   ( ~Model:west_gate 00000050 00000000 FFFFFFFF 00000000 )
+   D8:  		Call  UseDoorSounds ( .DoorSounds:Large )
+   E8:  		Set   *Var0  $Script_80246BD8
+   F8:  		ExecWait  EnterWalk
+  104:  		Call  MakeLerp      ( 00000050 00000000 0000000A .Easing:Linear )
+  120:  		Loop
+  12C:  			Call  UpdateLerp ( )
+  138:  			Call  RotateGroup   ( ~Model:east_gate *Var0 00000000 00000001 00000000 )
+  158:  			Call  RotateGroup   ( ~Model:west_gate *Var0 00000000 FFFFFFFF 00000000 )
+  178:  			Wait  1`
+  184:  			If  *Var1  ==  00000000
+  194:  				BreakLoop
+  19C:  			EndIf
+  1A4:  		EndLoop
+  1AC:  		Call  PlaySoundAtCollider   ( ~Collider:deilitn .Sound:LargeDoorClose 00000000 )
+  1C4:  		Call  ModifyColliderFlags   ( 00000001 ~Collider:deilitn 7FFFFE00 )
+  1DC:  		Call  DisablePlayerInput    ( .False )
+  1EC:  	Case  ==  ~Entry:Entry4
+  1F8:  		Exec  $Script_80261880
+  204:  	Case  ==  ~Entry:Entry5
+  210:  		ExecWait  $Script_8025A004
+  21C:  		Exec  $Script_80246BD8
+  228:  	Default
+  230:  		Set   *Var0  $Script_80246BD8
+  240:  		Exec  EnterWalk
+  24C:  EndSwitch
+  254:  Return
+  25C:  End
+}
+
+#new:Script $Script_NewYearsEnding
+{
+  Call DisablePlayerInput ( .True )
+  Call SetPlayerPos ( 0 0 0 )
+  Call SetCamSpeed ( .Cam:Default *Fixed[90.0] )
+  Thread
+    Call SpeakToPlayer ( 13 00B60008 00B60001 0  ~String:Countdown )
+  EndThread
+  Set *Var0 60`
+  % 10
+  Loop 10`
+    Call RotateModel ( ~Model:LongArrow *Var0 0 0 1 )
+    Call RotateModel ( ~Model:LongArrowHead *Var0 0 0 1 )
+    Wait 36`
+    Sub *Var0 6
+  EndLoop
+  Wait 30`
+  Call DisablePlayerInput ( .False )
+
+  Return
+  End
+}

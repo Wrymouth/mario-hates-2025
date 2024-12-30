@@ -249,3 +249,11 @@ now finally ready to take them on.[Wait][End]
 [EndChoice][End]
 }
 
+#message:2F:(Countdown)
+{
+[Style Right][InputOff]10... [Pause 30]9... [Pause 30]8... [Pause 30]7... [Pause 30]6... [Pause 30]5... [Pause 30]4...[BR][Pause 30]3... [Pause 30]2... [Pause 30]1... [InputOn][BR][Wait][Next]
+[InputOff]...[Pause 30]1...[BR]
+[Pause 60]1...[BR]
+[Pause 60]1...[InputOn][Wait][END]
+}
+
