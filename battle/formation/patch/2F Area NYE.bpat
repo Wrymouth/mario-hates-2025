@@ -592,6 +592,12 @@
         SetConst  *Var0  00000001 
         SetConst  *Var1  00EA0001 
         ExecWait  DoShockHit 
+        SetConst  *Var0  00000001 
+        SetConst  *Var1  00EA0000
+        ExecWait  DoJumpBack
+        SetConst  *Var0  00000001 
+        SetConst  *Var1  00EA0000
+        ExecWait  DoReturnHome
     Case == .Event:ShockDeath
         SetConst  *Var0  00000001 
         SetConst  *Var1  00EA0001 
