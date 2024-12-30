@@ -68,6 +68,10 @@
 
 #new:Function $Function_AddChillOut
 {
+    LI t0, $Data_StarSpiritCount
+    LW t1, 0 (t0)
+    ADDIU t1, t1, 1
+    SW t1, 0 (t0)
 
     JR RA
     ORI v0, r0, 2
