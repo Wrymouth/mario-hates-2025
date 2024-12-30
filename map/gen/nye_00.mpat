@@ -781,10 +781,10 @@
 	Call     802C9000 	( ~Model:UpperStars 1 )
 	Call     802C9000 	( ~Model:StarRoad 2 )
 	Call     802C9000 	( ~Model:StarRoad2 2 )
-	Call     802C9000 	( ~Model:CylinderModel 3 )
-	Call     802C9000 	( ~Model:CylinderModel 3 )
-	Call     802C9000 	( ~Model:CylinderModel 3 )
-	Call     802C9000 	( ~Model:CylinderModel 3 )
+	Call     802C9000 	( ~Model:FivePillar 3 )
+	Call     802C9000 	( ~Model:Two2Pillaer 3 )
+	Call     802C9000 	( ~Model:ZeroPillar 3 )
+	Call     802C9000 	( ~Model:Two1Pillar 3 )
 	Thread
 		Set  *Var[0] 0
 		Set  *Var[1] FA
