@@ -3,7 +3,7 @@
 #new:Header $Header
 {
 	[MainScript] $Script_Main
-	[Background] 80200000
+	[Background] 00000000
 	[EntryList] $EntryList
 	[EntryCount] 1
 }
@@ -781,7 +781,10 @@
 	Call     802C9000 	( ~Model:UpperStars 1 )
 	Call     802C9000 	( ~Model:StarRoad 2 )
 	Call     802C9000 	( ~Model:StarRoad2 2 )
-	Call     802C9000 	( ~Model:Podiums 3 )
+	Call     802C9000 	( ~Model:CylinderModel 3 )
+	Call     802C9000 	( ~Model:CylinderModel 3 )
+	Call     802C9000 	( ~Model:CylinderModel 3 )
+	Call     802C9000 	( ~Model:CylinderModel 3 )
 	Thread
 		Set  *Var[0] 0
 		Set  *Var[1] FA
