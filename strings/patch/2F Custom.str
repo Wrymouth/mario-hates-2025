@@ -139,7 +139,7 @@ specifically?[Wait][End]
 
 #message:2F:(ChoiceFebruary)
 {
-[Style Choice pos=95,90 size=140,62]
+[Style Choice pos=95,90 size=150,62]
 [StartChoice]
 [Option 0]Ultra Hammer[BR]
 [Option 1]Ultra Boots[BR]
@@ -159,7 +159,7 @@ specifically?[Wait][End]
 
 #message:2F:(ChoiceApril)
 {
-[Style Choice pos=95,90 size=120,46]
+[Style Choice pos=95,90 size=130,46]
 [StartChoice]
 [Option 0]P-Up D-Down[BR]
 [Option 1]P-Down D-Up[BR]
@@ -208,7 +208,7 @@ specifically?[Wait][End]
 
 #message:2F:(ChoiceNovember)
 {
-[Style Choice pos=110,90 size=110,46]
+[Style Choice pos=110,90 size=130,46]
 [StartChoice]
 [Option 0]Power Jump[BR]
 [Option 1]Power Smash[BR]

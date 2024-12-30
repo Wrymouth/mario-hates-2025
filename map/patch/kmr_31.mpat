@@ -128,6 +128,7 @@
 
 #new:Script $Script_HandleChoices 
 {
+    Call EnableStatusMenu ( .False )
     Call SetMusicTrack ( 0 .Song:MLPiTFileSelect 0 8 )
     Call ShowMessageAtScreenPos ( 002F0002 160` 40` )
     Call ShowChoice ( 002F000E )
@@ -243,6 +244,7 @@
 
     Call CloseMessage()
     Call ShowMessageAtScreenPos ( ~String:ChoicesConclude 160` 40` )
+    Call EnableStatusMenu ( .True )
     Call GotoMap ( "nye_00" 0 )
     Return
     End
