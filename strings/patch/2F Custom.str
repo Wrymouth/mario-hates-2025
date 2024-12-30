@@ -68,7 +68,11 @@ In [Color:07]January[Color:00][Pause 10] I selected...[BR]
 fact that it was the fifth month,[BR]
 [Wait][Next]
 that I spent the whole month[BR]
-training my strength.[Wait][End]
+training my strength.[BR]
+[Wait][Next]
+As a result of that training,[BR]
+I gained...[BR]
+[Yield][End]
 }
 
 #message:2F:007
@@ -233,5 +237,15 @@ specifically?[Wait][End]
 [Style Narrate]
 After all that preparation, I'm[BR]
 now finally ready to take them on.[Wait][End]
+}
+
+#message:2F:(ChoiceMay)
+{
+[Style Choice pos=110,90 size=100,62]
+[StartChoice]
+[Option 0]+10 HP[BR]
+[Option 1]+[Color 32]5[Color 10] FP[BR]
+[Option 2]+3 BP[BR]
+[EndChoice][End]
 }
 

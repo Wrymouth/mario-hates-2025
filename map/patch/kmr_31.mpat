@@ -185,15 +185,26 @@
 
     Call SwitchMessage ( 002F0005 )
     Call ShowChoice ( ~String:ChoiceApril )
-
+    
     Switch *Var0
     Case == 0 % P-Up D-Down
         Call AddBadge ( .Item:PUpDDown .Item:PUpDDown )
     Case == 1 % P-Down D-Up
         Call AddBadge ( .Item:PDownDUp .Item:PDownDUp )
     EndSwitch
-
+    
     Call SwitchMessage ( 002F0006 )
+    Call ShowChoice ( ~String:ChoiceMay )
+
+    Switch *Var0
+    Case == 0 % HP + 10
+        Call $Function_HPPlus10
+    Case == 1 % FP + 5
+        Call $Function_FPPlus5
+    Case == 2 % BP + 3
+        Call $Function_BPPlus3
+    EndSwitch
+
     Call CloseMessage ()
     Call ShowMessageAtScreenPos ( 002F0007 160` 40` )
     Call ShowMessageAtScreenPos ( 002F0008 160` 40` )
