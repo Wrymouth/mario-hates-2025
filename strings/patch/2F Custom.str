@@ -36,31 +36,31 @@ all![Wait][End]
 [Style Narrate]Every single month I've prepared[BR]
 something.[BR]
 [Wait][Next]
-In [Color:07]January[Color:00][Pause 10] I selected...
+In [Color:07]January[Color:00][Pause 10] I selected...[BR]
 [Yield][End]
 }
 
 #message:2F:003
 {
-[Style Narrate]In [Color:07]February[Color:00][Pause 10] I selected...
+[Style Narrate][Next]In [Color:07]February[Color:00][Pause 10] I selected...[BR]
 [Yield][End]
 }
 
 #message:2F:004
 {
-[Style Narrate]In [Color:07]March[Color:00][Pause 10] I selected...
+[Style Narrate][Next]In [Color:07]March[Color:00][Pause 10] I selected...[BR]
 [Yield][End]
 }
 
 #message:2F:005
 {
-[Style Narrate]In [Color:07]April[Color:00][Pause 10] I selected...
+[Style Narrate][Next]In [Color:07]April[Color:00][Pause 10] I selected...[BR]
 [Yield][End]
 }
 
 #message:2F:006
 {
-[Style Narrate]In [Color:07]May[Color:00] I was so enraged by the[BR]
+[Style Narrate][Next]In [Color:07]May[Color:00] I was so enraged by the[BR]
 fact that it was the fifth month,[BR]
 [Wait][Next]
 that I spent the whole month[BR]
@@ -76,37 +76,37 @@ was exhausting.[Wait][End]
 
 #message:2F:008
 {
-[Style Narrate]In [Color:07]July[Color:00][Pause 10] I selected...
+[Style Narrate]In [Color:07]July[Color:00][Pause 10] I selected...[BR]
 [Yield][End]
 }
 
 #message:2F:009
 {
-[Style Narrate]In [Color:07]August[Color:00][Pause 10] I selected...
+[Style Narrate][Next]In [Color:07]August[Color:00][Pause 10] I selected...[BR]
 [Yield][End]
 }
 
 #message:2F:00A
 {
-[Style Narrate]In [Color:07]September[Color:00][Pause 10] I selected...
+[Style Narrate][Next]In [Color:07]September[Color:00][Pause 10] I selected...[BR]
 [Yield][End]
 }
 
 #message:2F:00B
 {
-[Style Narrate]In [Color:07]October[Color:00][Pause 10] I selected...
+[Style Narrate][Next]In [Color:07]October[Color:00][Pause 10] I selected...[BR]
 [Yield][End]
 }
 
 #message:2F:00C
 {
-[Style Narrate]In [Color:07]November[Color:00][Pause 10] I selected...
+[Style Narrate][Next]In [Color:07]November[Color:00][Pause 10] I selected...[BR]
 [Yield][End]
 }
 
 #message:2F:00D
 {
-[Style Narrate]In [Color:07]December[Color:00][Pause 10] I selected...
+[Style Narrate][Next]In [Color:07]December[Color:00][Pause 10] I selected...[BR]
 [Yield][End]
 }
 
@@ -224,3 +224,10 @@ specifically?[Wait][End]
 [Option 2]Stop Watch[BR]
 [EndChoice][End]
 }
+#message:2F:(ChoicesConclude)
+{
+[Style Narrate]
+After all that preparation, I'm[BR]
+now finally ready to take them on.[Wait][End]
+}
+

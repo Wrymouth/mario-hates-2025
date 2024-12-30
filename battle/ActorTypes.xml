@@ -215,5 +215,5 @@
 	<ActorType desc="SlotMachineStart" id="D3" name="00290076" tattle="001C0093" sfxIncrement="30,30"/>
 	<ActorType desc="Two" id="D4" name="00290083" tattle="001C0096" sfxIncrement="30,30"/>
 	<ActorType desc="Zero" id="D5" name="00290084" tattle="001C0097" sfxIncrement="30,30"/>
-	<ActorType desc="Five" id="D6" name="00290085" tattle="001C0097" sfxIncrement="30,30"/>
+	<ActorType desc="Five" id="D6" name="00290085" tattle="001C0098" sfxIncrement="30,30"/>
 </ActorTypes>

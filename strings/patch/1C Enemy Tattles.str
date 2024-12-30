@@ -1,0 +1,37 @@
+#string:1C:096
+{
+	[Style Right]
+	This is a two, one of the numbers[BR]
+	making up the year 2025.[BR]
+	[Wait][Next]
+	It has 20 HP, and 1 DEF.[BR]
+	[Wait][Next]
+	It has a special attack[BR]
+	which attacks both you and[BR]
+	me, so be careful![Wait][End]
+}
+
+#string:1C:097
+{
+	[Style Right]
+	This is a zero, one of the numbers[BR]
+	making up the year 2025.[BR]
+	[Wait][Next]
+	It has 30 HP, and 1 DEF.[BR]
+	[Wait][Next]
+	It has a special attack[BR]
+	which heals all enemies.[Wait][End]
+}
+
+#string:1C:098
+{
+	[Style Right]
+	This is a five, one of the numbers[BR]
+	making up the year 2025.[BR]
+	[Wait][Next]
+	It has 30 HP, and 1 DEF.[BR]
+	[Wait][Next]
+	It has a special attack[BR]
+	which hits you five times[BR]
+at different speeds.[Wait][End]
+}
