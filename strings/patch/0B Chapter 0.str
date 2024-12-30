@@ -1,0 +1,9 @@
+#message:0B:0BA
+{
+	[Style Right]Wow Mario, I see now what you[BR]
+	mean when you say you hate[BR]
+	the number [SaveColor][Color:20]5[RestoreColor].[BR]
+	[Wait][Next]
+	That thing is [Shake]ugly[/fx].
+	[Wait][End]
+}
