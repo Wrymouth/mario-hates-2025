@@ -46,7 +46,7 @@
 }
 
 #new:Script $Script_Defeat_2022 {
-    Call GotoMap ( "nye_03" 0 )
+    Call GotoMap ( "mac_01" 0 )
     Return
     End
 }
