@@ -1,12 +1,13 @@
 @ $Script_8024FD70
 {
     Call  DisablePlayerInput    ( .True )
+    Set *GB_StoryProgress 90
     Thread
         Wait  5`
         Call  SetMusicTrack ( 00000000 .Song:MailCall 00000000 00000008 )
     EndThread
     Call  InterpPlayerYaw   (  90`  0` )
-    Call  SetPlayerPos  (  -92`  -80`  -63` )
+    Call  SetPlayerPos  (  ~Vec3D:Entry1 )
     Call  SetNpcPos     ( 00000001  220`  30`  -80` )
     Call  SetNpcPos     ( 00000000  720`  220`  -150` )
     Call  SetNpcYaw     ( 00000000  270` )
@@ -71,6 +72,59 @@
     EndLoop
     EndThread
     Wait  35`
+    Call WaitForCam ( .Cam:Default *Fixed[1.0] )
+    Call ShowMessageAtScreenPos ( 002F0000 0` 0` )
+    Call  UseSettingsFrom       ( .Cam:Default  320`  30`  -70` )
+    Call  SetPanTarget  ( .Cam:Default  320`  30`  -70` )
+    Call  SetCamSpeed   ( .Cam:Default *Fixed[1.0] )
+    Call  PanToTarget   ( .Cam:Default 00000000 00000001 )
+    Call WaitForCam ( .Cam:Default *Fixed[1.0] )
+    Wait  15`
+    Call ShowMessageAtScreenPos ( 002F0001 0` 0` )
+    Call EnableGroup ( ~Model:g102 .False )
+    Call EnableGroup ( ~Model:g105 .False )
+    Call EnableGroup ( ~Model:g108 .False )
+    Call EnableGroup ( ~Model:g109 .False )
+    % Call  SetMusicTrack ( 00000000 .Song:PeachsCastleParty 00000001 00000008 )
+    Exec  $Script_8024FCE4
+    % Thread
+    %     Wait  10`
+    %     Call  SetNpcSpeed   ( 00000001 *Fixed[3.0] )
+    %     Call  SetNpcAnimation   ( 00000001 0082000A )
+    %     Exec  $Script_8024F5A4 *VarA
+    %     Call  NpcMoveTo     ( 00000001  320`  -70`  0` )
+    %     Call  NpcMoveTo     ( 00000001  460`  -70`  0` )
+    %     Call  NpcMoveTo     ( 00000001  570`  -170`  0` )
+    %     Call  SetNpcAnimation   ( 00000001 00820004 )
+    %     Kill  *VarA
+    % EndThread
+    Call  802D1270      ( 00000140 FFFFFFBA *Fixed[3.0] )
+    Call  PanToTarget   ( .Cam:Default 00000000 00000000 )
+    Call  802D1270      ( 000001CC FFFFFFBA *Fixed[3.0] )
+    Call  802D1270      ( 0000023A FFFFFF56 *Fixed[3.0] )
+    Call  SetPlayerJumpscale    ( *Fixed[1.0] )
+    Call  PlayerJump    ( ~Vec3d:JumpDest_80250E6C  15` )
+    ExecWait  $Script_8024F6BC
+    % Call  SetNpcAnimation       ( 00000001 0082000C )
+    % Wait  10`
+    % Thread
+    %     Call  SetNpcAnimation   ( 00000001 0082000D )
+    %     Call  PlaySoundAtNpc    ( 00000001 .Sound:Jump 00000000 )
+    %     Wait  7`
+    %     Wait  7`
+    %     Call  SetNpcAnimation   ( 00000001 00820004 )
+    %     Call  PlaySoundAtNpc    ( 00000001 .Sound:SoftLand 00000000 )
+    % EndThread
+    % Call  SetNpcJumpscale   ( 00000001 *Fixed[1.0] )
+    % Call  NpcJump0  ( 00000001  594`  30`  -216`  15` )
+    ExecWait  $Script_8024F840
+    Exec  $Script_80242D78
+    Call AddItem ( .Item:Mystery 0 )
+    Call  GotoMap   ( "kmr_31" 00000000 ) % mac_00
+    Wait  100`
+    Call  DisablePlayerInput    ( .False )
+    Return
+    End
     Return
     End
 }
@@ -84,6 +138,7 @@
     ORI t5, r0, 1 % hex for 1
     ORI t6, r0, 5 % hex for 5
     ORI t7, r0, 4 % hex for 4
+    ORI t8, r0, 6 % hex for 6
     SB t5, 0000 (t0) % set Boots
     SB t5, 0001 (t0) % set Hammer
     SB t1, 0002 (t0) % set hp
@@ -92,18 +147,18 @@
     SB t6, 0005 (t0) % set fp
     SB t6, 0006 (t0) % max fp
     SB t6, 0007 (t0) % true max fp
-    SB t3, 0008 (t0) % max BP
+    SB t8, 0008 (t0) % max BP
     SB t4, 0009 (t0) % level
     SB t5, 000A (t0) % Lucky Star
-    SB t5, 001C (t0) % Goombario Get
-    SB t5, 001D (t0) % Goombario level
-    SB t5, 002C (t0) % Bombette Get
-    SB t5, 002D (t0) % Bombette level
-    SB t5, 005C (t0) % Bow Get
-    SB t5, 005D (t0) % Bow level
-    SB t5, 0012 (t0) % Goombario out
-    SB t7, 0290 (t0) % star power
-    SB t7, 028E (t0) % max star power
+    % SB t5, 001C (t0) % Goombario Get
+    % SB t5, 001D (t0) % Goombario level
+    % SB t5, 002C (t0) % Bombette Get
+    % SB t5, 002D (t0) % Bombette level
+    % SB t5, 005C (t0) % Bow Get
+    % SB t5, 005D (t0) % Bow level
+    % SB t5, 0012 (t0) % Goombario out
+    SB t3, 0290 (t0) % star power
+    SB t3, 028E (t0) % max star power
     JR RA
     ORI v0, r0, 2
 }
