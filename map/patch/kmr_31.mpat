@@ -1,41 +1,74 @@
 #new:Function $Function_HPPlus10
 {
+    LIO t0, 8010F290
+    LB t1, 0004, (t0) % true max HP
+    ADDIU t1, t1, 0A
+    SB t1, 0002, (t0) % cur HP
+    SB t1, 0003, (t0) % max HP
+    SB t1, 0004, (t0) % true max HP
+    
     JR RA
     ORI v0, r0, 2
 }
 
 #new:Function $Function_FPPlus5
 {
+    LIO t0, 8010F290
+    LB t1, 0007, (t0) % true max FP
+    ADDIU t1, t1, 05
+    SB t1, 0005, (t0) % cur FP
+    SB t1, 0006, (t0) % max FP
+    SB t1, 0007, (t0) % true max FP
+
     JR RA
     ORI v0, r0, 2
 }
 
 #new:Function $Function_BPPlus3
 {
+    LIO t0, 8010F290
+    LB t1, 0008, (t0) % BP
+    ADDIU t1, t1, 03
+    SB t1, 0008, (t0) % BP
+
     JR RA
     ORI v0, r0, 2
 }
 
 #new:Function $Function_GetUltraBoots
 {
+    LIO t0, 8010F290
+    ORI t1, r0, 2 % ultra rank
+    SB t1, 0000 (t0) % boots level
+
     JR RA
     ORI v0, r0, 2
 }
 
 #new:Function $Function_GetUltraHammer
 {
+    LIO t0, 8010F290
+    ORI t1, r0, 2 % ultra rank
+    SB t1, 0001 (t0) % hammer level
+
     JR RA
     ORI v0, r0, 2
 }
 
 #new:Function $Function_SPPlus3
 {
+    LIO t0, 8010F290
+    LB t1, 028E (t0) % star power
+    ADDIU t1, t1, 3
+    SB t1, 0290 (t0) % star power
+    SB t1, 028E (t0) % max star power
     JR RA
     ORI v0, r0, 2
 }
 
 #new:Function $Function_AddChillOut
 {
+
     JR RA
     ORI v0, r0, 2
 }
@@ -43,18 +76,27 @@
 
 #new:Function $Function_AddSushie
 {
+    LIO t0, 8010F290
+    ORI t1, r0, 0101 % enabled, super rank
+    SH t1, 004C (t0) % sushie
     JR RA
     ORI v0, r0, 2
 }
 
 #new:Function $Function_AddWatt
 {
+    LIO t0, 8010F290
+    ORI t1, r0, 0101 % enabled, super rank
+    SH t1, 0044 (t0) % watt
     JR RA
     ORI v0, r0, 2
 }
 
-#new:Function $Function_AddBow
+#new:Function $Function_AddKooper
 {
+    LIO t0, 8010F290
+    ORI t1, r0, 0101 % enabled, super rank
+    SH t1, 0024 (t0) % kooper
     JR RA
     ORI v0, r0, 2
 }
@@ -157,7 +199,7 @@
     Case == 1 % Watt
         Call $Function_AddWatt
     Case == 2 % Bow
-        Call $Function_AddBow
+        Call $Function_AddKooper
     EndSwitch
 
     Call SwitchMessage ( 002F000A )
