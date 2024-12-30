@@ -59,7 +59,7 @@
 }
 
 #new:Script $Script_Idle_2022 {
-    Call AwaitPlayerApproach ( 74` 192` 70` )
+    Call AwaitPlayerApproach ( ~Vec2D:MarioPos 215` )
     ExecWait $Script_BattleCutscene
     Return
     End
@@ -79,18 +79,8 @@
     Call  MakeNpcs           ( .False $NpcGroupList_Nye00 )
 	Exec  $Script_MakeEntities
     Exec  $Script_SetupMusic
+	Exec  $Script_SetupTexturePan
     Exec  $Script_EnterMap
-    Return
-    End
-}
-
-@ $Script_EnterMap {
-    Call  GetLoadType   ( *Var[0] )
-    If  *Var[0]  ==  1
-        Exec  EnterSavePoint
-        Exec $Script_CreateExitTriggers
-        Return
-    EndIf
     Return
     End
 }
@@ -98,24 +88,26 @@
 #new:Script $Script_BattleCutscene {
     Call DisablePlayerInput ( .True )
     Call SpeakToPlayer ( 1 00EA0000 00EA0000 5 002F001F )
-    Call UseSettingsFrom ( .Cam:Default 28` 169` -112` )
-    Call SetCamSpeed ( .Cam:Default *Fixed[3.0] )
-    Call SetPanTarget ( .Cam:Default 28` 169` -112` )
-    Call PanToTarget ( .Cam:Default .Easing:Linear 1 )
-    Call WaitForCam ( .Cam:Default *Fixed[1.0] )
-    Call SetPlayerPos ( -53` 0` 336` )
+    Call PlayerMoveTo ( ~Vec2D:MarioPos 110` )
+    ExecWait $Script_PanCamera_CameraPan
+    % Call UseSettingsFrom ( .Cam:Default 28` 169` -112` )
+    % Call SetCamSpeed ( .Cam:Default *Fixed[3.0] )
+    % Call SetPanTarget ( .Cam:Default 28` 169` -112` )
+    % Call PanToTarget ( .Cam:Default .Easing:Linear 1 )
+    % Call WaitForCam ( .Cam:Default *Fixed[1.0] )
+    % Call SetPlayerPos ( -53` 0` 336` )
     Wait 30`
     Thread
-        Call NpcJump0 ( 1 40` 0` 336` 30` )
+        Call NpcJump1 ( 1 ~Vec3D:Two1Pos 30` )
     EndThread
     Thread
-        Call NpcJump0 ( 2 80` 0` 336` 30` )
+        Call NpcJump1 ( 2 ~Vec3D:ZeroPos 30` )
     EndThread
     Thread
-        Call NpcJump0 ( 3 120` 0` 336` 30` )
+        Call NpcJump1 ( 3 ~Vec3D:Two2Pos 30` )
     EndThread
     Thread
-        Call NpcJump0 ( 4 160` 0` 336` 30` )
+        Call NpcJump1 ( 4 ~Vec3D:FivePos 30` )
     EndThread
     Wait 10`
     Call ResetCam ( .Cam:Default *Fixed[3.0] )
