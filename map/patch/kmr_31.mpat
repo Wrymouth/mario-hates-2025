@@ -73,6 +73,19 @@
     ORI v0, r0, 2
 }
 
+#new:Function $Function_AddGoombario
+{
+    LIO t0, 8010F290
+    
+    ORI t1, r0, 0101 % enabled, super rank
+    SH t1, 001C (t0) % goombario
+    
+    ORI t1, r0, 1 % enabled, super rank
+    SB t1, 0012 (t0) % Goombario out
+    
+    JR RA
+    ORI v0, r0, 2
+}
 
 #new:Function $Function_AddSushie
 {
@@ -193,6 +206,8 @@
     Call SwitchMessage ( 002F0009 )
     Call ShowChoice ( ~String:ChoiceAugust )
 
+    Call $Function_AddGoombario % He is given by default
+    
     Switch *Var0
     Case == 0 % Sushie
         Call $Function_AddSushie
