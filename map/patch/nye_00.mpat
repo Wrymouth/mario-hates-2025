@@ -4,28 +4,28 @@
 	~NoDrops
 	~Movement:Thousand
 	~AnimationTable:Thousand % .Sprite:Two
-	00000000 00000000 00000000 001A0064 % What is that thing?
+	00000000 00000000 00000000 00000000 % What is that thing?
     %
     00000002 $NpcSettings_2022 ~Vec3f:Hundred % 100 0 -256
     00002809 $Script_Init_2022 00000000 00000000 0000005A
     ~NoDrops
     ~Movement:Hundred
     ~AnimationTable:Hundred % .Sprite:Zero
-    00000000 00000000 00000000 001A0064 % What is that thing?
+    00000000 00000000 00000000 00000000 % What is that thing?
     %
     00000003 $NpcSettings_2022 ~Vec3f:Ten % 100 0 -256
     00002809 $Script_Init_2022 00000000 00000000 0000005A
     ~NoDrops
     ~Movement:Ten
     ~AnimationTable:Ten % .Sprite:One
-    00000000 00000000 00000000 001A0064 % What is that thing?
+    00000000 00000000 00000000 00000000 % What is that thing?
     %
     00000004 $NpcSettings_2022 ~Vec3f:One % 100 0 -256
     00002809 $Script_Init_2022 00000000 00000000 0000005A
     ~NoDrops
     ~Movement:One
     ~AnimationTable:One % .Sprite:Three
-    00000000 00000000 00000000 001A0064 % What is that thing?
+    00000000 00000000 00000000 00000000 % What is that thing?
 }
 
 #new:NpcSettings $NpcSettings_2022 {
@@ -123,5 +123,5 @@
     [Background] 00000000
     [EntryList] $EntryList
     [EntryCount] 2
-    [MapTattle] 0019018B
+    [MapTattle] 00190189
 }
