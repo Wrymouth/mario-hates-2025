@@ -37,7 +37,7 @@
 
 #new:Actor $Two {
 [Index]        D4b 
-[Level]        40`b 
+[Level]        32`b 
 [MaxHP]        20`b 
 [Coins]         1`b
 [Flags]       00000000 
@@ -63,7 +63,7 @@
 
 #new:Actor $Zero {
 [Index]        D5b 
-[Level]        40`b 
+[Level]        32`b 
 [MaxHP]        30`b 
 [Coins]         1`b 
 [Flags]       00000000 
@@ -89,7 +89,7 @@
 
 #new:Actor $Five {
     [Index]        D6b 
-    [Level]        40`b 
+    [Level]        30`b 
     [MaxHP]        25`b 
     [Coins]         1`b 
     [Flags]       00000000 
