@@ -146,6 +146,7 @@
     Sub *Var0 6
   EndLoop
   Wait 30`
+  Call ShowMessageAtScreenPos ( ~String:DiaryEntryEnding 160` 40` )
   Call DisablePlayerInput ( .False )
 
   Return
