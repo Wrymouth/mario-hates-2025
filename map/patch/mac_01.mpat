@@ -4,10 +4,10 @@
 #define .NpcID:ShyGuy_07            07
 #define .NpcID:ShyGuy_08            08
 #define .NpcID:ShyGuy_09            09
-#define .NpcID:Toad_10              0A
-#define .NpcID:Toad_11              0B
-#define .NpcID:Toad_12              0C
-#define .NpcID:Toad_13              0D
+#define .NpcID:Number2              0A
+#define .NpcID:Number0              0B
+#define .NpcID:Number2_2              0C
+#define .NpcID:Number5              0D
 #define .NpcID:Toad_14              0E
 #define .NpcID:Toad_15              0F
 #define .NpcID:Toad_16              10
@@ -89,35 +89,35 @@
 
 @ $NpcGroup_8025CCA8
 {
-	.NpcID:Toad_10 $NpcSettings_80248AC0 ~Vec3f:NPC_Toad_10 % -94 0 -117
+	.NpcID:Number2 $NpcSettings_80248AC0 ~Vec3f:NPC_Number2 % -94 0 -117
 	00002D09 $Script_Init_Numbers 00000000 00000000 0000005A
 	~NoDrops
-	~Movement:NPC_Toad_10
-	~AnimationTable:NPC_Toad_10 % .Sprite:Toad
+	~Movement:NPC_Number2
+	~AnimationTable:NPC_Number2 % .Sprite:Toad
 	00000000 00000000 00000000 001A002B % This friendly Toad loves to run his mouth. He's a  ...
 	%
 	% $NpcGroup_8025CCA8[1F0]
-	.NpcID:Toad_11 $NpcSettings_802489C0 ~Vec3f:NPC_Toad_11 % -145 0 -25
+	.NpcID:Number0 $NpcSettings_802489C0 ~Vec3f:NPC_Number0 % -145 0 -25
 	00002D09 $Script_Init_Numbers 00000000 00000000 0000010E
 	~NoDrops
-	~Movement:NPC_Toad_11
-	~AnimationTable:NPC_Toad_11 % .Sprite:Toad
+	~Movement:NPC_Number0
+	~AnimationTable:NPC_Number0 % .Sprite:Toad
 	00000000 00000000 00000000 001A002C % This guy knows tons of gossip. His favorite subjec ...
 	%
 	% $NpcGroup_8025CCA8[3E0]
-	.NpcID:Toad_12 $NpcSettings_80248A68 ~Vec3f:NPC_Toad_12 % 40 0 -300
+	.NpcID:Number2_2 $NpcSettings_80248A68 ~Vec3f:NPC_Number2_2 % 40 0 -300
 	00002D09 $Script_Init_Numbers 00000000 00000000 0000010E
 	~NoDrops
-	~Movement:NPC_Toad_12
-	~AnimationTable:NPC_Toad_12 % .Sprite:Toad
+	~Movement:NPC_Number2_2
+	~AnimationTable:NPC_Number2_2 % .Sprite:Toad
 	00000000 00000000 00000000 001A002D % This Toad... I'll tell you a secret. He's a huge f ...
 	%
 	% $NpcGroup_8025CCA8[5D0]
-	.NpcID:Toad_13 $NpcSettings_80248A68 ~Vec3f:NPC_Toad_13 % -440 0 -20
+	.NpcID:Number5 $NpcSettings_80248A68 ~Vec3f:NPC_Number5 % -440 0 -20
 	00002D09 $Script_Init_Numbers 00000000 00000000 0000005A
 	~NoDrops
-	~Movement:NPC_Toad_13
-	~AnimationTable:NPC_Toad_13 % .Sprite:Toad
+	~Movement:NPC_Number5
+	~AnimationTable:NPC_Number5 % .Sprite:Toad
 	00000000 00000000 00000000 001A002E % This guy often knows rumors. He's counting on you, ...
 	%
 	% $NpcGroup_8025CCA8[7C0]
@@ -298,6 +298,7 @@
 #new:Script $Script_NewYearsEnding
 {
   Call DisablePlayerInput ( .True )
+  Call EnableGroup ( ~Model:ClockBroken .False )
   Call SetPlayerPos ( 0 0 0 )
   Call SetCamSpeed ( .Cam:Default *Fixed[90.0] )
   Thread
@@ -313,11 +314,12 @@
     Loop 5`
       Call RotateModel ( ~Model:LongArrow *Var0 0 0 1 )
       Call RotateModel ( ~Model:LongArrowHead *Var0 0 0 1 )
+      Call PlaySound ( 000001F9 )
       Wait 34`
       Sub *Var0 6
     EndLoop
   EndThread
-  Call SpeakToPlayer ( .NpcID:Toad_10 00EA0000 00EA0000 0  ~String:Countdown )
+  Call SpeakToPlayer ( .NpcID:Number2 00EA0000 00EA0000 0  ~String:Countdown )
   Wait 75`
   Call ShowMessageAtScreenPos ( ~String:DiaryEntryEnding 160` 40` )
   WaitSeconds 9`
@@ -344,8 +346,9 @@
   Call FadeOutMusic ( 0 500` )
   Wait 60`
   % play music, numbers jump out
-  % The numbers are Toad_10 (2), Toad_11 (0), Toad_12 (2), Toad_13 (5)
-
+  % The numbers are Number2 (2), Number0 (0), Number2_2 (2), Number5 (5)
+  Call EnableGroup ( ~Model:ClockBroken .True )
+  Call EnableGroup ( ~Model:ClockNormal .False )
 
   Return
   End
