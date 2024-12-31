@@ -89,7 +89,7 @@
 
 @ $NpcGroup_8025CCA8
 {
-	.NpcID:Number2 $NpcSettings_80248AC0 ~Vec3f:NPC_Number2 % -94 0 -117
+	.NpcID:Number2 $NpcSettings_Numbers ~Vec3f:NPC_Number2 % -94 0 -117
 	00002D09 $Script_Init_Numbers 00000000 00000000 0000005A
 	~NoDrops
 	~Movement:NPC_Number2
@@ -97,7 +97,7 @@
 	00000000 00000000 00000000 001A002B % This friendly Toad loves to run his mouth. He's a  ...
 	%
 	% $NpcGroup_8025CCA8[1F0]
-	.NpcID:Number0 $NpcSettings_80248AC0 ~Vec3f:NPC_Number0 % -145 0 -25
+	.NpcID:Number0 $NpcSettings_Numbers ~Vec3f:NPC_Number0 % -145 0 -25
 	00002D09 $Script_Init_Numbers 00000000 00000000 0000010E
 	~NoDrops
 	~Movement:NPC_Number0
@@ -105,7 +105,7 @@
 	00000000 00000000 00000000 001A002C % This guy knows tons of gossip. His favorite subjec ...
 	%
 	% $NpcGroup_8025CCA8[3E0]
-	.NpcID:Number2_2 $NpcSettings_80248AC0 ~Vec3f:NPC_Number2_2 % 40 0 -300
+	.NpcID:Number2_2 $NpcSettings_Numbers ~Vec3f:NPC_Number2_2 % 40 0 -300
 	00002D09 $Script_Init_Numbers 00000000 00000000 0000010E
 	~NoDrops
 	~Movement:NPC_Number2_2
@@ -113,7 +113,7 @@
 	00000000 00000000 00000000 001A002D % This Toad... I'll tell you a secret. He's a huge f ...
 	%
 	% $NpcGroup_8025CCA8[5D0]
-	.NpcID:Number5 $NpcSettings_80248AC0 ~Vec3f:NPC_Number5 % -440 0 -20
+	.NpcID:Number5 $NpcSettings_Numbers ~Vec3f:NPC_Number5 % -440 0 -20
 	00002D09 $Script_Init_Numbers 00000000 00000000 0000005A
 	~NoDrops
 	~Movement:NPC_Number5
@@ -345,30 +345,136 @@
   Wait 30`
   Call FadeOutMusic ( 0 500` )
   Wait 60`
-  % play music, numbers jump out
-  % The numbers are Number2 (2), Number0 (0), Number2_2 (2), Number5 (5)
+  Call SetMusicTrack ( 0 .Song:SunTowerSunny 0 8 )
+  Exec $Script_ArrowsFlyAway
+  Call PlayEffect    ( ~FX:Explosion3 ~Vec3D:ExplosionVFX 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 )
+  Call PlaySound ( 00002076 )
+  Thread
+    Call ShakeCam ( .Cam:Default 1` 15` 2` )
+  EndThread
   Call EnableGroup ( ~Model:ClockBroken .True )
   Call EnableGroup ( ~Model:ClockNormal .False )
   Call SetNpcPos ( .NpcID:Number2 ~Vec3D:NumbersPopOut )
   Call SetNpcPos ( .NpcID:Number0 ~Vec3D:NumbersPopOut )
   Call SetNpcPos ( .NpcID:Number2_2 ~Vec3D:NumbersPopOut )
   Call SetNpcPos ( .NpcID:Number5 ~Vec3D:NumbersPopOut )
-  
+  Thread
+    Wait 5`
+    Call SetNpcJumpscale ( .NpcID:Number0 *Fixed[0.01] )
+    Call NpcJump1 ( .NpcID:Number0 ~Vec3D:Position_Number0 20` )
+  EndThread
+  Thread
+    Wait 10`
+    Call SetNpcJumpscale ( .NpcID:Number2_2 *Fixed[0.01] )
+    Call NpcJump1 ( .NpcID:Number2_2 ~Vec3D:Position_Number2_2 20` )
+  EndThread
+  Thread
+    Wait 15`
+    Call SetNpcJumpscale ( .NpcID:Number5 *Fixed[0.01] )
+    Call NpcJump1 ( .NpcID:Number5 ~Vec3D:Position_Number5 20` )
+  EndThread
   Call SetNpcJumpscale ( .NpcID:Number2 *Fixed[0.01] )
-  Call NpcJump1 ( .NpcID:Number2 ~Vec3D:Position_Number2 30` )
-  Call SetNpcJumpscale ( .NpcID:Number0 *Fixed[0.01] )
-  Call NpcJump1 ( .NpcID:Number0 ~Vec3D:Position_Number0 20` )
-  Call SetNpcJumpscale ( .NpcID:Number2_2 *Fixed[0.01] )
-  Call NpcJump1 ( .NpcID:Number2_2 ~Vec3D:Position_Number2_2 20` )
-  Call SetNpcJumpscale ( .NpcID:Number5 *Fixed[0.01] )
-  Call NpcJump1 ( .NpcID:Number5 ~Vec3D:Position_Number5 30` )
-
+  Call NpcJump1 ( .NpcID:Number2 ~Vec3D:Position_Number2 20` )
+  Exec $Script_Number2Fly
+  Wait 5`
+  Exec $Script_Number0Fly
+  Wait 5`
+  Exec $Script_Number2_2Fly
+  Wait 5`
+  Exec $Script_Number5Fly
+  Wait 300`
+  Call ShowMessageAtScreenPos ( ~String:HappyNewYear 160` 40` )
   Return
   End
 }
 
 #new:Script $Script_Init_Numbers
 {
+  Call BindNpcIdle ( .Npc:Self $Script_NumbersIdle )
+  Return
+  End
+}
+
+#new:NpcSettings $NpcSettings_Numbers
+{
+	00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000
+	00000000 00000000 00630000
+}
+
+#new:Script $Script_ArrowsFlyAway
+{
+  Set *Var0 0`
+  Set *Var1 0`
+  Set *Var2 0`
+  Set *Var3 0`
+  Set *Var4 0`
+  Loop 60`
+    Add *Var0 8`
+    Sub *Var1 8`
+    Add *Var2 3`
+    Add *Var3 8`
+    Call TranslateGroup ( ~Model:LongArrowMatrix *Var0 *Var2 *Var3 ) % +X +Z
+    Call TranslateGroup ( ~Model:ShortArrowMatrix *Var1 *Var2 *Var3 ) % -X +Z
+    Wait 1`
+  EndLoop
+  Return
+  End
+}
+
+#new:Script $Script_Number2Fly
+{
+  Loop 
+    Call NpcFlyTo ( .NpcID:Number2 ~Vec3D:Position_Number2_FlyToHalf 15` *Fixed[1.0] .Easing:CubicIn )
+    Call NpcFlyTo ( .NpcID:Number2 ~Vec3D:Position_Number2_FlyTo 15` *Fixed[1.0] .Easing:CubicOut )
+    Call NpcFlyTo ( .NpcID:Number2 ~Vec3D:Position_Number2_FlyToHalf 15` *Fixed[1.0] .Easing:CubicIn )
+    Call NpcFlyTo ( .NpcID:Number2 ~Vec3D:Position_Number2 15` *Fixed[1.0] .Easing:CubicOut )
+  EndLoop
+  Return
+  End
+}
+
+#new:Script $Script_Number0Fly
+{
+  Loop 
+    Call NpcFlyTo ( .NpcID:Number0 ~Vec3D:Position_Number0_FlyToHalf 15` *Fixed[1.0] .Easing:CubicIn )
+    Call NpcFlyTo ( .NpcID:Number0 ~Vec3D:Position_Number0_FlyTo 15` *Fixed[1.0] .Easing:CubicOut )
+    Call NpcFlyTo ( .NpcID:Number0 ~Vec3D:Position_Number0_FlyToHalf 15` *Fixed[1.0] .Easing:CubicIn )
+    Call NpcFlyTo ( .NpcID:Number0 ~Vec3D:Position_Number0 15` *Fixed[1.0] .Easing:CubicOut )
+  EndLoop
+  Return
+  End
+}
+
+#new:Script $Script_Number2_2Fly
+{
+  Loop 
+    Call NpcFlyTo ( .NpcID:Number2_2 ~Vec3D:Position_Number2_2_FlyToHalf 15` *Fixed[1.0] .Easing:CubicIn )
+    Call NpcFlyTo ( .NpcID:Number2_2 ~Vec3D:Position_Number2_2_FlyTo 15` *Fixed[1.0] .Easing:CubicOut )
+    Call NpcFlyTo ( .NpcID:Number2_2 ~Vec3D:Position_Number2_2_FlyToHalf 15` *Fixed[1.0] .Easing:CubicIn )
+    Call NpcFlyTo ( .NpcID:Number2_2 ~Vec3D:Position_Number2_2 15` *Fixed[1.0] .Easing:CubicOut )
+  EndLoop
+  Return
+  End
+}
+
+#new:Script $Script_Number5Fly
+{
+  Loop 
+    Call NpcFlyTo ( .NpcID:Number5 ~Vec3D:Position_Number5_FlyToHalf 15` *Fixed[1.0] .Easing:CubicIn )
+    Call NpcFlyTo ( .NpcID:Number5 ~Vec3D:Position_Number5_FlyTo 15` *Fixed[1.0] .Easing:CubicOut )
+    Call NpcFlyTo ( .NpcID:Number5 ~Vec3D:Position_Number5_FlyToHalf 15` *Fixed[1.0] .Easing:CubicIn )
+    Call NpcFlyTo ( .NpcID:Number5 ~Vec3D:Position_Number5 15` *Fixed[1.0] .Easing:CubicOut )
+  EndLoop
+  Return
+  End
+}
+
+#new:Script $Script_NumbersIdle
+{
+  Loop 
+    Call SetNpcYaw ( .Npc:Self 270` )
+    Wait 1`
+  EndLoop
   Return
   End
 }

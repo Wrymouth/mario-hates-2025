@@ -22,7 +22,7 @@ that instead.[BR]
 [Wait][Next]
 But now it's finally time...[BR]
 [Wait][Next]
-Time I destroy 2025 once and for[BR]
+Time I destroy 202[Color:07]5[Color 00] once and for[BR]
 all![BR]
 [Wait][Next]
 ...[BR]
@@ -252,7 +252,7 @@ now finally ready to take them on.[Wait][End]
 [Style Right][InputOff]10... [Pause 30]9... [Pause 30]8... [Pause 30]7... [Pause 30]6... [Pause 30]5... [Pause 30]4...[BR][Pause 30]3... [Pause 30]2... [Pause 30]1... [InputOn][BR][Wait][Next]
 [InputOff]...[Pause 30]1...[BR]
 [Pause 60]1...[BR]
-[Pause 60]1...[InputOn][Wait][END]
+[Pause 60]1..?[InputOn][Wait][END]
 }
 
 #message:2F:(DiaryEntryEnding)
@@ -260,11 +260,11 @@ now finally ready to take them on.[Wait][End]
 [Style Narrate]Dear diary...[BR]
 [Wait][Next]
 The operation was a huge success.[BR]
-2025 has been delayed indefinitely.[BR]
+202[Color:07]5[Color 00] has been delayed indefinitely.[BR]
 [Wait][Next]
 I can finally rest, knowing that the[BR]
 upcoming year will be entirely free[BR]
-of the number 5.[BR]
+of the number [Color:07]5[Color 00].[BR]
 [Wait][Next]
 The end.[Wait][End]
 }
@@ -292,10 +292,17 @@ Super Boots[BR]
 Super Hammer[BR]
 Goombario[BR]
 [Wait][Next]
-Refresh (1 SP)[BR]
-Star Storm (3 SP)[BR]
+Refresh ([SaveColor][Color:07]1[RestoreColor] SP)[BR]
+Star Storm ([SaveColor][Color:07]3[RestoreColor] SP)[BR]
 [Wait][Next]
 And a Mystery, too.
 [Wait][End]
+}
+
+#message:2F:(HappyNewYear)
+{
+[Style Narrate]
+[BR]
+[Down 4][CenterX 145][Color:05][Wave]Happy New Year![/fx][Wait][End]
 }
 
