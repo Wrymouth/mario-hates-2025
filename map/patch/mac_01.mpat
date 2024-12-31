@@ -1,6 +1,165 @@
+#define .NpcID:WorldParakarry_04    04
+#define .NpcID:ChuckQuizmo_05       05
+#define .NpcID:ShyGuy_06            06
+#define .NpcID:ShyGuy_07            07
+#define .NpcID:ShyGuy_08            08
+#define .NpcID:ShyGuy_09            09
+#define .NpcID:Toad_10              0A
+#define .NpcID:Toad_11              0B
+#define .NpcID:Toad_12              0C
+#define .NpcID:Toad_13              0D
+#define .NpcID:Toad_14              0E
+#define .NpcID:Toad_15              0F
+#define .NpcID:Toad_16              10
+#define .NpcID:Bubulb_17            11
+#define .NpcID:MinhT_18             12
+#define .NpcID:DarkToad_20          14
+#define .NpcID:DarkToad_21          15
+#define .NpcID:DarkToad_22          16
+#define .NpcID:DarkToad_23          17
+#define .NpcID:KoopaBros_24         18
+#define .NpcID:KoopaBros_25         19
+#define .NpcID:KoopaBros_26         1A
+#define .NpcID:KoopaBros_27         1B
+#define .NpcID:Twink_28             1C
+#define .NpcID:Ninji_29             1D
+#define .NpcID:KoloradoWife_30      1E
+#define .NpcID:KoopaKoot_31         1F
+#define .NpcID:Koopa_32             20
+#define .NpcID:WorldBobomb_33       21
+#define .NpcID:Dryite_34            22
+#define .NpcID:Dryite_35            23
+#define .NpcID:Chanterelle_36       24
+#define .NpcID:ArtistToad_37        25
+#define .NpcID:ArtistToad_38        26
+
 @ $Function_8024522C
 {
   [A4]  LA        A3, $Global_ItemHudScripts
+}
+
+@ $NpcGroup_802600AC
+{
+	00000013 $NpcSettings_8025FAD4 ~Vec3f:NPC_Kolorado_19 % 60 0 -120
+	00002D09 $Script_Init_8025FC0C 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:NPC_Kolorado_19
+	~AnimationTable:NPC_Kolorado_19 % .Sprite:Kolorado
+	00000000 00000000 $ExtraAnimationList_8026005C 00000000 % no tattle string
+	%
+	% $NpcGroup_802600AC[1F0]
+	.NpcID:KoloradoWife_30 $NpcSettings_8025FB00 ~Vec3f:NPC_KoloradoWife_30 % 100 0 -110
+	00002D09 $Script_Init_8025FC60 00000000 00000000 0000010E
+	~NoDrops
+	~Movement:NPC_KoloradoWife_30
+	~AnimationTable:NPC_KoloradoWife_30 % .Sprite:KoloradoWife
+	00000000 00000000 $ExtraAnimationList_8026006C 00000000 % no tattle string
+	%
+	% $NpcGroup_802600AC[3E0]
+	.NpcID:KoopaKoot_31 $NpcSettings_8025FB2C ~Vec3f:NPC_KoopaKoot_31 % -330 0 330
+	00002D09 $Script_Init_8025FCB4 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:NPC_KoopaKoot_31
+	~AnimationTable:NPC_KoopaKoot_31 % .Sprite:KoopaKoot
+	00000000 00000000 $ExtraAnimationList_8026007C 00000000 % no tattle string
+	%
+	% $NpcGroup_802600AC[5D0]
+	.NpcID:Koopa_32 $NpcSettings_8025FB58 ~Vec3f:NPC_Koopa_32 % 300 20 -100
+	00002D09 $Script_Init_8025FD5C 00000000 00000000 0000010E
+	~NoDrops
+	~Movement:NPC_Koopa_32
+	~AnimationTable:NPC_Koopa_32 % .Sprite:Koopa
+	00000000 00000000 $ExtraAnimationList_8026008C 00000000 % no tattle string
+	%
+	% $NpcGroup_802600AC[7C0]
+	.NpcID:WorldBobomb_33 $NpcSettings_8025FB84 ~Vec3f:NPC_WorldBobomb_33 % 252 20 -100
+	00002D09 $Script_Init_8025FD08 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:NPC_WorldBobomb_33
+	~AnimationTable:NPC_WorldBobomb_33 % .Sprite:WorldBobomb
+	00000000 00000000 $ExtraAnimationList_8026009C 00000000 % no tattle string
+}
+
+@ $NpcGroup_8025CCA8
+{
+	.NpcID:Toad_10 $NpcSettings_80248AC0 ~Vec3f:NPC_Toad_10 % -94 0 -117
+	00002D09 $Script_Init_8025A7A0 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:NPC_Toad_10
+	~AnimationTable:NPC_Toad_10 % .Sprite:Toad
+	00000000 00000000 $ExtraAnimationList_8025CC80 001A002B % This friendly Toad loves to run his mouth. He's a  ...
+	%
+	% $NpcGroup_8025CCA8[1F0]
+	.NpcID:Toad_11 $NpcSettings_802489C0 ~Vec3f:NPC_Toad_11 % -145 0 -25
+	00002D09 $Script_Init_8025AB1C 00000000 00000000 0000010E
+	~NoDrops
+	~Movement:NPC_Toad_11
+	~AnimationTable:NPC_Toad_11 % .Sprite:Toad
+	00000000 00000000 $ExtraAnimationList_8025CC80 001A002C % This guy knows tons of gossip. His favorite subjec ...
+	%
+	% $NpcGroup_8025CCA8[3E0]
+	.NpcID:Toad_12 $NpcSettings_80248A68 ~Vec3f:NPC_Toad_12 % 40 0 -300
+	00002D09 $Script_Init_8025AE24 00000000 00000000 0000010E
+	~NoDrops
+	~Movement:NPC_Toad_12
+	~AnimationTable:NPC_Toad_12 % .Sprite:Toad
+	00000000 00000000 $ExtraAnimationList_8025CC80 001A002D % This Toad... I'll tell you a secret. He's a huge f ...
+	%
+	% $NpcGroup_8025CCA8[5D0]
+	.NpcID:Toad_13 $NpcSettings_80248A68 ~Vec3f:NPC_Toad_13 % -440 0 -20
+	00002D09 $Script_Init_8025B1B4 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:NPC_Toad_13
+	~AnimationTable:NPC_Toad_13 % .Sprite:Toad
+	00000000 00000000 $ExtraAnimationList_8025CC80 001A002E % This guy often knows rumors. He's counting on you, ...
+	%
+	% $NpcGroup_8025CCA8[7C0]
+	.NpcID:Toad_14 $NpcSettings_80248A68 ~Vec3f:NPC_Toad_14 % 400 20 260
+	00002D09 $Script_Init_8025B4BC 00000000 00000000 0000005A
+	~NoDrops
+	~Movement:NPC_Toad_14
+	~AnimationTable:NPC_Toad_14 % .Sprite:Toad
+	00000000 00000000 $ExtraAnimationList_8025CC80 001A002F % It seems like this Toad is always in love with som ...
+	%
+	% $NpcGroup_8025CCA8[9B0]
+	.NpcID:Toad_15 $NpcSettings_80248AC0 ~Vec3f:NPC_Toad_15 % -380 20 -100
+	00002D09 $Script_Init_8025B73C 00000000 00000000 0000010E
+	~NoDrops
+	~Movement:NPC_Toad_15
+	~AnimationTable:NPC_Toad_15 % .Sprite:Toad
+	00000000 00000000 $ExtraAnimationList_8025CC80 001A0030 % He's a Toad who often thinks about going south. Ma ...
+	%
+	% $NpcGroup_8025CCA8[BA0]
+	.NpcID:Toad_16 $NpcSettings_80248AC0 ~Vec3f:NPC_Toad_16 % 488 20 -174
+	00002D09 $Script_Init_8025BE6C 00000000 00000000 0000001E
+	~NoDrops
+	~Movement:NPC_Toad_16
+	~AnimationTable:NPC_Toad_16 % .Sprite:Toad
+	00000000 00000000 $ExtraAnimationList_8025CC80 001A0031 % This is the manager of a Toad House. These havens  ...
+	%
+	% $NpcGroup_8025CCA8[D90]
+	.NpcID:Bubulb_17 $NpcSettings_80248BD8 ~Vec3f:NPC_Bubulb_17 % 0 -1000 0
+	00002D09 $Script_Init_8025833C 00000000 00000000 00000000
+	~NoDrops
+	~Movement:NPC_Bubulb_17
+	~AnimationTable:NPC_Bubulb_17 % .Sprite:Bubulb
+	00000000 00000000 $ExtraAnimationList_8025CC98 001A0032 % He's one of the Bub-ulbs. Bub-ulbs are a type of t ...
+	%
+	% $NpcGroup_8025CCA8[F80]
+	.NpcID:MinhT_18 $NpcSettings_80248AC0 ~Vec3f:NPC_MinhT_18 % 150 20 485
+	00002D09 $Script_Init_80259A3C 00000000 00000000 0000010E
+	~NoDrops
+	~Movement:NPC_MinhT_18
+	~AnimationTable:NPC_MinhT_18 % .Sprite:MinhT
+	00000000 00000000 00000000 001A0026 % She takes care of flowers. Her name is Minh T. Nob ...
+	%
+	% $NpcGroup_8025CCA8[1170]
+	00000003 $NpcSettings_80248AC0 ~Vec3f:NPC_8025DE18 % 312 30 -438
+	00012D09 $Script_Init_80257210 00000000 00000000 0000012C
+	~NoDrops
+	~Movement:NPC_8025DE18
+	~AnimationTable:NPC_8025DE18 % .Sprite:Postmaster
+	00000000 00000000 00000000 001A0022 % This Paratroopa looks extremely serious. And stubb ...
 }
 
 @ $Script_Main
@@ -144,21 +303,35 @@
       Sub *Var0 6
     EndLoop
   EndThread
-  Call SpeakToPlayer ( 13 00B60008 00B60001 0  ~String:Countdown )
-  Wait 30`
+  Call SpeakToPlayer ( .NpcID:Toad_10 00EA0000 00EA0000 0  ~String:Countdown )
+  Wait 75`
   Call ShowMessageAtScreenPos ( ~String:DiaryEntryEnding 160` 40` )
   WaitSeconds 9`
   Set *Var0 0`
-  Loop 230`
-    Add *Var0 1`
+  Thread
+    Wait 15`
+    Call SetMusicTrack ( 0 .Song:WhaleTheme 0 8 )
+  EndThread
+  Loop 115`
+    Add *Var0 2`
     Call TranslateGroup ( ~Model:Whale *Var0 0 0 )
     Wait 1`
   EndLoop
   % click sound
   Call RotateModel ( ~Model:LongArrow 0 0 0 1 )
   Call RotateModel ( ~Model:LongArrowHead 0 0 0 1 )
-  Wait 90`
+  Wait 20`
+  Loop 70`
+    Sub *Var0 3`
+    Call TranslateGroup ( ~Model:Whale *Var0 0 0 )
+    Wait 1`
+  EndLoop
+  Wait 30`
+  Call FadeOutMusic ( 0 500` )
+  Wait 60`
   % play music, numbers jump out
+  % The numbers are Toad_10 (2), Toad_11 (0), Toad_12 (2), Toad_13 (5)
+
 
   Return
   End
