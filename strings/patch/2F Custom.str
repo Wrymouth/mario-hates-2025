@@ -35,7 +35,7 @@ five.[Wait][End]
 [Style Narrate]Every single month I've prepared[BR]
 something.[BR]
 [Wait][Next]
-In [Color:07]January[Color:00][Pause 10] I selected...[BR]
+In [Color:07]January[Color:00][Pause 10] I gained...[BR]
 [Yield][End]
 }
 
@@ -47,13 +47,13 @@ In [Color:07]January[Color:00][Pause 10] I selected...[BR]
 
 #message:2F:004
 {
-[Style Narrate][Next]In [Color:07]March[Color:00][Pause 10] I selected...[BR]
+[Style Narrate][Next]In [Color:07]March[Color:00][Pause 10] I bought a...[BR]
 [Yield][End]
 }
 
 #message:2F:005
 {
-[Style Narrate][Next]In [Color:07]April[Color:00][Pause 10] I selected...[BR]
+[Style Narrate][Next]In [Color:07]April[Color:00][Pause 10] I picked up...[BR]
 [Yield][End]
 }
 
@@ -75,18 +75,20 @@ I gained...[BR]
 [Style Narrate]In [Color:07]June[Color:00] I rested, because the[BR]
 training from the previous month[BR]
 was exhausting.[BR]
+[Wait][Next]
+I did however pick up...[BR]
 [Yield][End]
 }
 
 #message:2F:008
 {
-[Style Narrate][Next]In [Color:07]July[Color:00][Pause 10] I selected...[BR]
+[Style Narrate][Next]In [Color:07]July[Color:00][Pause 10] I got...[BR]
 [Yield][End]
 }
 
 #message:2F:009
 {
-[Style Narrate][Next]In [Color:07]August[Color:00][Pause 10] I selected...[BR]
+[Style Narrate][Next]In [Color:07]August[Color:00][Pause 10] I enlisted the help of...[BR]
 [Yield][End]
 }
 

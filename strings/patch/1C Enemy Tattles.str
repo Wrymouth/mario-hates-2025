@@ -14,8 +14,9 @@
 #message:1C:097
 {
 	[Style Right]
-	This is a zero, one of the numbers[BR]
-	making up the year 2025.[BR]
+	This is a zero, one of the[BR]
+	numbers making up the year[BR]
+	2025.[BR]
 	[Wait][Next]
 	It has 30 HP, and 1 DEF.[BR]
 	[Wait][Next]
@@ -26,8 +27,9 @@
 #message:1C:098
 {
 	[Style Right]
-	This is a five, one of the numbers[BR]
-	making up the year 2025.[BR]
+	This is a five, one of the[BR]
+	numbers making up the year[BR]
+	2025.[BR]
 	[Wait][Next]
 	This thing is weird. You should[BR]
 	get it out of our sight as fast[BR]
