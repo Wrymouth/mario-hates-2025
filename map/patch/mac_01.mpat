@@ -298,6 +298,7 @@
 #new:Script $Script_NewYearsEnding
 {
   Call DisablePlayerInput ( .True )
+  Call EnableGroup ( ~Model:ClockBroken .False )
   Call SetPlayerPos ( 0 0 0 )
   Call SetCamSpeed ( .Cam:Default *Fixed[90.0] )
   Thread
@@ -346,7 +347,8 @@
   Wait 60`
   % play music, numbers jump out
   % The numbers are Number2 (2), Number0 (0), Number2_2 (2), Number5 (5)
-
+  Call EnableGroup ( ~Model:ClockBroken .True )
+  Call EnableGroup ( ~Model:ClockNormal .False )
 
   Return
   End

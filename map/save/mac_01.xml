@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="mac_01" author="unnamed" background="kpa_bg" textures="mac_tex">
 	<Editor>
-		<Camera pos="7.637560,403.729156,315.699280" pitch="27.199997" yaw="352.160126"/>
+		<Camera pos="8.975615,367.014221,246.879700" pitch="22.719999" yaw="352.640259"/>
 		<Camera pos="2.911608,65536.000000,96.801262"/>
 		<Camera pos="65536.000000,335.085266,63.113510"/>
 		<Camera pos="-4.421024,244.448822,65536.000000"/>
@@ -684,7 +684,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="GROUP" lightset="0">
-			<MapObject name="ClockBroken" id="F1"/>
+			<MapObject name="ClockBroken" id="F1" hidden="true"/>
 			<BoundingBox empty="false" min="-59,216,86" max="61,338,116"/>
 			<PropertyList>
 				<Property v="60,0,0"/>
@@ -692,7 +692,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Split Model" id="F0"/>
+			<MapObject name="Split Model" id="F0" hidden="true"/>
 			<ShapeMesh ver="3" texture="mac_clockLU">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -731,10 +731,10 @@
 					</TriangleBatch>
 					<TriangleBatch ver="0">
 						<VertexTable>
-							<Vertex xyz="0,322,101" uv="2079,186" rgba="-52,-52,-52,-1"/>
-							<Vertex xyz="-25,316,101" uv="1983,-214" rgba="-52,-52,-52,-1"/>
-							<Vertex xyz="-24,309,106" uv="1807,-134" rgba="-52,-52,-52,-1"/>
-							<Vertex xyz="-30,297,106" uv="1823,-214" rgba="-52,-52,-52,-1"/>
+							<Vertex xyz="0,322,101" uv="2079,186" rgba="204,204,204,255"/>
+							<Vertex xyz="-25,316,101" uv="1983,-214" rgba="204,204,204,255"/>
+							<Vertex xyz="-24,309,106" uv="1807,-134" rgba="204,204,204,255"/>
+							<Vertex xyz="-30,297,106" uv="1823,-214" rgba="204,204,204,255"/>
 						</VertexTable>
 						<TriangleList>
 							<Triangle ijk="0,1,2"/>
@@ -744,26 +744,26 @@
 					</TriangleBatch>
 					<TriangleBatch ver="0">
 						<VertexTable>
-							<Vertex xyz="37,305,101" uv="2399,570" rgba="-52,-52,-52,-1"/>
-							<Vertex xyz="27,316,101" uv="2575,426" rgba="-52,-52,-52,-1"/>
-							<Vertex xyz="45,277,101" uv="1935,698" rgba="-52,-52,-52,-1"/>
-							<Vertex xyz="36,247,101" uv="1455,570" rgba="-52,-52,-52,-1"/>
-							<Vertex xyz="27,234,101" uv="1247,394" rgba="-52,-52,-52,-1"/>
-							<Vertex xyz="1,230,101" uv="1199,-6" rgba="-52,-52,-52,-1"/>
-							<Vertex xyz="-25,234,101" uv="1263,-422" rgba="-52,-52,-52,-1"/>
-							<Vertex xyz="-35,247,101" uv="1471,-582" rgba="-52,-52,-52,-1"/>
-							<Vertex xyz="-43,277,101" uv="1951,-710" rgba="-52,-52,-52,-1"/>
-							<Vertex xyz="-35,305,101" uv="2399,-566" rgba="-52,-52,-52,-1"/>
-							<Vertex xyz="-25,316,101" uv="2575,-422" rgba="-52,-52,-52,-1"/>
-							<Vertex xyz="-30,297,106" uv="2415,-422" rgba="-52,-52,-52,-1"/>
-							<Vertex xyz="-38,280,106" uv="1999,-534" rgba="-52,-52,-52,-1"/>
-							<Vertex xyz="-26,251,106" uv="1535,-438" rgba="-52,-52,-52,-1"/>
-							<Vertex xyz="-3,243,101" uv="1407,-70" rgba="-52,-52,-52,-1"/>
-							<Vertex xyz="26,245,106" uv="1439,394" rgba="-52,-52,-52,-1"/>
-							<Vertex xyz="39,266,106" uv="1775,602" rgba="-52,-52,-52,-1"/>
-							<Vertex xyz="40,304,106" uv="2239,474" rgba="-52,-52,-52,-1"/>
-							<Vertex xyz="0,322,101" uv="2415,10" rgba="-52,-52,-52,-1"/>
-							<Vertex xyz="-24,309,106" uv="2399,-342" rgba="-52,-52,-52,-1"/>
+							<Vertex xyz="37,305,101" uv="2399,570" rgba="204,204,204,255"/>
+							<Vertex xyz="27,316,101" uv="2575,426" rgba="204,204,204,255"/>
+							<Vertex xyz="45,277,101" uv="1935,698" rgba="204,204,204,255"/>
+							<Vertex xyz="36,247,101" uv="1455,570" rgba="204,204,204,255"/>
+							<Vertex xyz="27,234,101" uv="1247,394" rgba="204,204,204,255"/>
+							<Vertex xyz="1,230,101" uv="1199,-6" rgba="204,204,204,255"/>
+							<Vertex xyz="-25,234,101" uv="1263,-422" rgba="204,204,204,255"/>
+							<Vertex xyz="-35,247,101" uv="1471,-582" rgba="204,204,204,255"/>
+							<Vertex xyz="-43,277,101" uv="1951,-710" rgba="204,204,204,255"/>
+							<Vertex xyz="-35,305,101" uv="2399,-566" rgba="204,204,204,255"/>
+							<Vertex xyz="-25,316,101" uv="2575,-422" rgba="204,204,204,255"/>
+							<Vertex xyz="-30,297,106" uv="2415,-422" rgba="204,204,204,255"/>
+							<Vertex xyz="-38,280,106" uv="1999,-534" rgba="204,204,204,255"/>
+							<Vertex xyz="-26,251,106" uv="1535,-438" rgba="204,204,204,255"/>
+							<Vertex xyz="-3,243,101" uv="1407,-70" rgba="204,204,204,255"/>
+							<Vertex xyz="26,245,106" uv="1439,394" rgba="204,204,204,255"/>
+							<Vertex xyz="39,266,106" uv="1775,602" rgba="204,204,204,255"/>
+							<Vertex xyz="40,304,106" uv="2239,474" rgba="204,204,204,255"/>
+							<Vertex xyz="0,322,101" uv="2415,10" rgba="204,204,204,255"/>
+							<Vertex xyz="-24,309,106" uv="2399,-342" rgba="204,204,204,255"/>
 						</VertexTable>
 						<TriangleList>
 							<Triangle ijk="0,1,2"/>
@@ -794,7 +794,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Split Model" id="EF"/>
+			<MapObject name="Split Model" id="EF" hidden="true"/>
 			<ShapeMesh ver="3" texture="mac_clockLU">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -882,7 +882,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Split Model" id="ED"/>
+			<MapObject name="Split Model" id="ED" hidden="true"/>
 			<ShapeMesh ver="3" texture="mac_clockRU">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -926,7 +926,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Radial GridModel" id="EC"/>
+			<MapObject name="Radial GridModel" id="EC" hidden="true"/>
 			<ShapeMesh ver="3" texture="mac_clockLD">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
