@@ -313,6 +313,7 @@
     Loop 5`
       Call RotateModel ( ~Model:LongArrow *Var0 0 0 1 )
       Call RotateModel ( ~Model:LongArrowHead *Var0 0 0 1 )
+      Call PlaySound ( 000001F9 )
       Wait 34`
       Sub *Var0 6
     EndLoop
