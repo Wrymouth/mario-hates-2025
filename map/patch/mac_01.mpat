@@ -306,6 +306,7 @@
     Loop 5`
       Call RotateModel ( ~Model:LongArrow *Var0 0 0 1 )
       Call RotateModel ( ~Model:LongArrowHead *Var0 0 0 1 )
+      Call PlaySound ( 000001F9 )
       Wait 36`
       Sub *Var0 6
     EndLoop
@@ -330,7 +331,7 @@
     Call TranslateGroup ( ~Model:Whale *Var0 0 0 )
     Wait 1`
   EndLoop
-  % click sound
+  Call PlaySound ( 000001F9 )
   Call RotateModel ( ~Model:LongArrow 0 0 0 1 )
   Call RotateModel ( ~Model:LongArrowHead 0 0 0 1 )
   Wait 20`
