@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="mac_01" author="unnamed" background="kpa_bg" textures="mac_tex">
 	<Editor>
-		<Camera pos="8.975615,367.014221,246.879700" pitch="22.719999" yaw="352.640259"/>
-		<Camera pos="2.911608,65536.000000,96.801262"/>
+		<Camera pos="-25.848417,332.353912,326.722656" pitch="22.080027" yaw="355.519836"/>
+		<Camera pos="-12.534958,65536.000000,117.431412"/>
 		<Camera pos="65536.000000,335.085266,63.113510"/>
-		<Camera pos="-4.421024,244.448822,65536.000000"/>
+		<Camera pos="-20.154358,-41.831802,65536.000000"/>
 	</Editor>
 	<ModelTree>
 		<Node name="Root" id="F7">
@@ -463,7 +463,7 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="41">
+		<Node name="Root" id="46">
 			<Node name="Entrances" id="5">
 				<Node name="Entry0" id="FFFFFFFF"/>
 				<Node name="Entry1" id="0"/>
@@ -533,6 +533,11 @@
 			<Node name="TreeFX_Tree2_0" id="3E"/>
 			<Node name="TreeFX_Tree2_1" id="3F"/>
 			<Node name="Bomb_802625F4" id="40"/>
+			<Node name="NumbersPopOut" id="41"/>
+			<Node name="Position_Number2" id="42"/>
+			<Node name="Position_Number0" id="43"/>
+			<Node name="Position_Number2_2" id="44"/>
+			<Node name="Position_Number5" id="45"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -838,7 +843,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="Split Model" id="EE"/>
+			<MapObject name="Split Model" id="EE" hidden="true"/>
 			<ShapeMesh ver="3" texture="mac_clockRD">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -17282,7 +17287,22 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="41"/>
+			<MapObject name="Root" id="46"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="138,239,149" yaw="0.000000">
+			<MapObject name="Position_Number5" id="45"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="53,239,149" yaw="0.000000">
+			<MapObject name="Position_Number2_2" id="44"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="-36,239,149" yaw="0.000000">
+			<MapObject name="Position_Number0" id="43"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="-140,239,149" yaw="0.000000">
+			<MapObject name="Position_Number2" id="42"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="3,239,70" yaw="0.000000">
+			<MapObject name="NumbersPopOut" id="41"/>
 		</Marker>
 		<Marker ver="4" type="Trigger" desc="Trigger" pos="-157,20,-458" yaw="0.000000">
 			<MapObject name="Bomb_802625F4" id="40"/>
@@ -17467,22 +17487,22 @@
 			<Movement type="Patrol" data="2,190,14,104,1EA,14,104,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,FFFF8001,0,0,0,A,0,0,1,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="83" palette="2" animations="1,2,3,3,1,1,6,6,3,3,3,3,3,3,3,3"/>
 		</Marker>
-		<Marker ver="4" type="NPC" pos="1,213,-9" yaw="90.000000">
+		<Marker ver="4" type="NPC" pos="0,-1000,0" yaw="270.000000">
 			<MapObject name="NPC_Number5" id="19"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="EC" palette="0" animations="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
-		<Marker ver="4" type="NPC" pos="1,213,16" yaw="270.000000">
+		<Marker ver="4" type="NPC" pos="0,-1000,0" yaw="270.000000">
 			<MapObject name="NPC_Number2_2" id="18"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="EA" palette="0" animations="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
-		<Marker ver="4" type="NPC" pos="1,213,41" yaw="270.000000">
+		<Marker ver="4" type="NPC" pos="0,-1000,0" yaw="270.000000">
 			<MapObject name="NPC_Number0" id="17"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="EB" palette="0" animations="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
-		<Marker ver="4" type="NPC" pos="1,213,66" yaw="90.000000">
+		<Marker ver="4" type="NPC" pos="0,-1000,0" yaw="270.000000">
 			<MapObject name="NPC_Number2" id="16"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="EA" palette="0" animations="0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0"/>

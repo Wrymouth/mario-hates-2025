@@ -97,7 +97,7 @@
 	00000000 00000000 00000000 001A002B % This friendly Toad loves to run his mouth. He's a  ...
 	%
 	% $NpcGroup_8025CCA8[1F0]
-	.NpcID:Number0 $NpcSettings_802489C0 ~Vec3f:NPC_Number0 % -145 0 -25
+	.NpcID:Number0 $NpcSettings_80248AC0 ~Vec3f:NPC_Number0 % -145 0 -25
 	00002D09 $Script_Init_Numbers 00000000 00000000 0000010E
 	~NoDrops
 	~Movement:NPC_Number0
@@ -105,7 +105,7 @@
 	00000000 00000000 00000000 001A002C % This guy knows tons of gossip. His favorite subjec ...
 	%
 	% $NpcGroup_8025CCA8[3E0]
-	.NpcID:Number2_2 $NpcSettings_80248A68 ~Vec3f:NPC_Number2_2 % 40 0 -300
+	.NpcID:Number2_2 $NpcSettings_80248AC0 ~Vec3f:NPC_Number2_2 % 40 0 -300
 	00002D09 $Script_Init_Numbers 00000000 00000000 0000010E
 	~NoDrops
 	~Movement:NPC_Number2_2
@@ -113,7 +113,7 @@
 	00000000 00000000 00000000 001A002D % This Toad... I'll tell you a secret. He's a huge f ...
 	%
 	% $NpcGroup_8025CCA8[5D0]
-	.NpcID:Number5 $NpcSettings_80248A68 ~Vec3f:NPC_Number5 % -440 0 -20
+	.NpcID:Number5 $NpcSettings_80248AC0 ~Vec3f:NPC_Number5 % -440 0 -20
 	00002D09 $Script_Init_Numbers 00000000 00000000 0000005A
 	~NoDrops
 	~Movement:NPC_Number5
@@ -349,6 +349,19 @@
   % The numbers are Number2 (2), Number0 (0), Number2_2 (2), Number5 (5)
   Call EnableGroup ( ~Model:ClockBroken .True )
   Call EnableGroup ( ~Model:ClockNormal .False )
+  Call SetNpcPos ( .NpcID:Number2 ~Vec3D:NumbersPopOut )
+  Call SetNpcPos ( .NpcID:Number0 ~Vec3D:NumbersPopOut )
+  Call SetNpcPos ( .NpcID:Number2_2 ~Vec3D:NumbersPopOut )
+  Call SetNpcPos ( .NpcID:Number5 ~Vec3D:NumbersPopOut )
+  
+  Call SetNpcJumpscale ( .NpcID:Number2 *Fixed[0.01] )
+  Call NpcJump1 ( .NpcID:Number2 ~Vec3D:Position_Number2 30` )
+  Call SetNpcJumpscale ( .NpcID:Number0 *Fixed[0.01] )
+  Call NpcJump1 ( .NpcID:Number0 ~Vec3D:Position_Number0 20` )
+  Call SetNpcJumpscale ( .NpcID:Number2_2 *Fixed[0.01] )
+  Call NpcJump1 ( .NpcID:Number2_2 ~Vec3D:Position_Number2_2 20` )
+  Call SetNpcJumpscale ( .NpcID:Number5 *Fixed[0.01] )
+  Call NpcJump1 ( .NpcID:Number5 ~Vec3D:Position_Number5 30` )
 
   Return
   End
