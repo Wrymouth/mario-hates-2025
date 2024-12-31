@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="mac_01" author="unnamed" background="kpa_bg" textures="mac_tex">
 	<Editor>
-		<Camera pos="-43.246201,153.708511,678.687500" pitch="0.480014" yaw="6.720033"/>
+		<Camera pos="69.547203,110.217064,-113.165436" pitch="11.520065" yaw="294.079681"/>
 		<Camera pos="11.303661,65536.000000,4.623504"/>
 		<Camera pos="65536.000000,209.029587,6.704980"/>
 		<Camera pos="-206.459396,49.999100,65536.000000"/>
@@ -17182,7 +17182,7 @@
 		<Marker ver="4" type="NPC" pos="-94,0,-117" yaw="90.000000">
 			<MapObject name="NPC_Toad_10" id="16"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
-			<Sprite sprite="EA" palette="0" animations="1,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0"/>
+			<Sprite sprite="EA" palette="0" animations="0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="300,20,500" yaw="270.000000">
 			<MapObject name="NPC_ArtistToad_38" id="15"/>
