@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map name="nye_00" author="unnamed" textures="hos_tex">
 	<Editor>
-		<Camera pos="143.900742,410.386871,400.378143" pitch="25.520636" yaw="0.480988"/>
-		<Camera pos="81.461777,65536.000000,-5.670258"/>
+		<Camera pos="71.049522,70.928352,478.679932" pitch="42.880005" yaw="357.280975"/>
+		<Camera pos="68.951103,65536.000000,465.927612"/>
 		<Camera pos="65536.000000,24.376801,-248.212311"/>
 		<Camera pos="335.692383,-127.337463,65536.000000"/>
 	</Editor>
@@ -4400,75 +4400,75 @@
 			<MapObject name="Root" id="16"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="70,53,-178" yaw="0.000000">
-			<MapObject name="MusicMark3" id="15"/>
+			<MapObject name="MusicMark3" id="15" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="70,53,42" yaw="0.000000">
-			<MapObject name="MusicMark2" id="14"/>
+			<MapObject name="MusicMark2" id="14" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="70,53,262" yaw="0.000000">
-			<MapObject name="MusicMark1" id="13"/>
+			<MapObject name="MusicMark1" id="13" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-85,62,452" yaw="90.000000">
-			<MapObject name="AttackFXBlock6" id="12"/>
+			<MapObject name="AttackFXBlock6" id="12" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-39,62,563" yaw="45.000000">
-			<MapObject name="AttackFXBlock5" id="11"/>
+			<MapObject name="AttackFXBlock5" id="11" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="70,62,604" yaw="0.000000">
-			<MapObject name="AttackFXBlock4" id="10"/>
+			<MapObject name="AttackFXBlock4" id="10" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="179,62,563" yaw="-45.000000">
-			<MapObject name="AttackFXBlock3" id="F"/>
+			<MapObject name="AttackFXBlock3" id="F" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="225,62,452" yaw="-90.000000">
-			<MapObject name="AttackFXBlock2" id="E"/>
+			<MapObject name="AttackFXBlock2" id="E" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="179,62,341" yaw="-135.000000">
-			<MapObject name="AttackFXBlock1" id="D"/>
+			<MapObject name="AttackFXBlock1" id="D" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="70,200,-1103" yaw="0.000000">
-			<MapObject name="ShootingStarMarker" id="C"/>
+			<MapObject name="ShootingStarMarker" id="C" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="CamTarget" pos="70,243,-588" yaw="-135.000000">
-			<MapObject name="CameraPan" id="B"/>
+			<MapObject name="CameraPan" id="B" hidden="true"/>
 			<CamTarget sampleZone="true" generatePan="true" panSpeed="1.000000" overrideLength="700.000000" overrideAngles="12.000000,-2.000000"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="120,160,-688" yaw="-45.000000">
-			<MapObject name="Two2Pos" id="A"/>
+			<MapObject name="Two2Pos" id="A" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="195,160,-638" yaw="-45.000000">
-			<MapObject name="FivePos" id="9"/>
+			<MapObject name="FivePos" id="9" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-55,160,-638" yaw="-135.000000">
-			<MapObject name="Two1Pos" id="8"/>
+			<MapObject name="Two1Pos" id="8" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="20,160,-688" yaw="-135.000000">
-			<MapObject name="ZeroPos" id="7"/>
+			<MapObject name="ZeroPos" id="7" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="70,160,-588" yaw="-135.000000">
-			<MapObject name="MarioPos" id="6"/>
+			<MapObject name="MarioPos" id="6" hidden="true"/>
 		</Marker>
 		<Marker ver="4" type="Entity" pos="-40,62,340" yaw="-225.000000">
-			<MapObject name="SaveBlock" id="5"/>
+			<MapObject name="SaveBlock" id="5" hidden="true"/>
 			<Entity type="802E9A18"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="302,200,-824" yaw="-90.000000">
-			<MapObject name="One" id="4"/>
+			<MapObject name="One" id="4" hidden="true"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="EC" palette="0" animations="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="159,200,-903" yaw="-90.000000">
-			<MapObject name="Ten" id="3"/>
+			<MapObject name="Ten" id="3" hidden="true"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="EA" palette="0" animations="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="-19,200,-903" yaw="-90.000000">
-			<MapObject name="Hundred" id="2"/>
+			<MapObject name="Hundred" id="2" hidden="true"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="EB" palette="0" animations="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
 		<Marker ver="4" type="NPC" pos="-162,200,-824" yaw="-90.000000">
-			<MapObject name="Thousand" id="1"/>
+			<MapObject name="Thousand" id="1" hidden="true"/>
 			<Movement type="Stationary" data="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 			<Sprite sprite="EA" palette="0" animations="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"/>
 		</Marker>
@@ -4476,7 +4476,7 @@
 			<MapObject name="Entrances" id="0"/>
 		</Marker>
 		<Marker ver="4" type="Entry" pos="70,30,452" yaw="180.000000">
-			<MapObject name="Entry0" id="FFFFFFFF"/>
+			<MapObject name="Entry0" id="FFFFFFFF" hidden="true"/>
 		</Marker>
 	</Markers>
 	<ScriptData>

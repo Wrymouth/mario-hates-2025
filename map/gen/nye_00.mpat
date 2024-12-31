@@ -598,56 +598,14 @@
 	If  *Var[0]  ==  00000000
 		Return
 	EndIf
-	Call  GetCurrentPartner ( *Var[0] )
-	If  *Var[0]  !=  00000000
-		Call  GetCurrentPartnerID   ( *Var[1] )
-		If  *Var[1]  !=  .Partner:Watt % 6
-			Return
-		Else
-			Call  802D2B6C ( )
-			Call  DisablePlayerInput    ( .True )
-		EndIf
-	Else
-		Call  DisablePlayerInput    ( .True )
-	EndIf
-/%
-	ExecWait  $Script_80241230
-	Return
-	End
-}
-
-#new:Script $Script_80241230
-{
-%/
-	SetGroup  0000001B
-	Call  $Function_Pipe_SetAnimFlag ( )
-	Call  DisablePlayerPhysics  ( .True )
-	Call  HidePlayerShadow  ( .True )
-	Set   *Var[0]  *Var[A]
-	Call  $Function_Pipe_GetEntryCoords ( )
-	Call  PlayerMoveTo      ( *Var[1] *Var[3] 00000003 )
-	Set   *Var[0]  *Var[A]
-	Call  $Function_Pipe_GetEntryCoords ( )
-	Call  SetPlayerPos      ( *Var[1] *Var[2] *Var[3] )
-	Call  SetPlayerFlagBits ( 00200000 .True )
-	Call  $Function_Pipe_GetCameraYaw ( )
-	Call  InterpPlayerYaw   ( *Var[0] 00000000 )
-	Wait  2`
-	Call  SetPlayerFlagBits ( 00200000 .False )
-	Call  PlaySound ( 00000163 )
-	Call  GetPlayerPos      ( *Var[0] *Var[1] *Var[2] )
-	Thread
-		Wait  4`
-		Loop  40`
-			Sub   *Var[1]  00000001
-			Call  SetPlayerPos  ( *Var[0] *Var[1] *Var[2] )
-			Wait  1`
-		EndLoop
-	EndThread
-	Call  802D286C  ( 00000800 )
-	Call  802D2520  ( 00010002 00000005 00000002 00000001 00000001 00000000 )
-	Wait  25`
-	ExecWait  *Var[C]
+	Call DisablePlayerInput ( .True )
+	Wait 10`
+	Call SetPlayerAnimation ( 00090000 )
+	Wait 25`
+	Call GetPlayerPos ( *Var0 0` *Var1 )
+	Add *Var1 50`
+	Call PlayerMoveTo ( *Var0 *Var1 15` )
+	Call DisablePlayerInput ( .False )
 	Return
 	End
 }
