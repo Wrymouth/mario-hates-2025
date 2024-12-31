@@ -303,10 +303,16 @@
   Thread
     Set *Var0 60`
     % 10
-    Loop 10`
+    Loop 5`
       Call RotateModel ( ~Model:LongArrow *Var0 0 0 1 )
       Call RotateModel ( ~Model:LongArrowHead *Var0 0 0 1 )
       Wait 36`
+      Sub *Var0 6
+    EndLoop
+    Loop 5`
+      Call RotateModel ( ~Model:LongArrow *Var0 0 0 1 )
+      Call RotateModel ( ~Model:LongArrowHead *Var0 0 0 1 )
+      Wait 34`
       Sub *Var0 6
     EndLoop
   EndThread
