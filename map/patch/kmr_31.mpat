@@ -59,7 +59,7 @@
 {
     LIO t0, 8010F290
     LB t1, 028E (t0) % star power
-    ADDIU t1, t1, 3
+    ADDIU t1, t1, 2
     SB t1, 0290 (t0) % star power
     SB t1, 028E (t0) % max star power
     JR RA
@@ -136,6 +136,7 @@
 {
     Call EnableStatusMenu ( .False )
     Call SetMusicTrack ( 0 .Song:MLPiTFileSelect 0 8 )
+    Call ShowMessageAtScreenPos ( ~String:StartingStats 160` 40` )
     Call ShowMessageAtScreenPos ( 002F0002 160` 40` )
     Call ShowChoice ( 002F000E )
 
@@ -196,7 +197,16 @@
 
     Call CloseMessage ()
     Call ShowMessageAtScreenPos ( 002F0007 160` 40` )
-    Call ShowMessageAtScreenPos ( 002F0008 160` 40` )
+    Call ShowChoice ( ~String:ChoiceJune )
+
+    Switch *Var0
+    Case == 0 % Happy Heart
+        Call AddBadge ( .Item:HappyHeartA .Item:HappyHeartA )
+    Case == 1 % Happy Flower
+        Call AddBadge ( .Item:HappyFlowerA .Item:HappyFlowerA )
+    EndSwitch
+
+    Call SwitchMessage ( 002F0008 )
     Call ShowChoice ( ~String:ChoiceJuly )
     
     Switch *Var0
@@ -253,8 +263,8 @@
     Call ShowChoice ( ~String:ChoiceDecember )
 
     Switch *Var0
-    Case == 0 % Shooting Star
-        Call AddItem (  .Item:ShootingStar .Item:ShootingStar )
+    Case == 0 % Snowman Doll
+        Call AddItem (  .Item:SnowmanDoll .Item:SnowmanDoll )
     Case == 1 % Yummy Meal
         Call AddItem (  .Item:YummyMeal .Item:YummyMeal )
     Case == 2 % Stop Watch

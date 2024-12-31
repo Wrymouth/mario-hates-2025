@@ -38,7 +38,7 @@
 #new:Actor $Two {
 [Index]        D4b 
 [Level]        32`b 
-[MaxHP]        20`b 
+[MaxHP]        22`b 
 [Coins]         1`b
 [Flags]       00000000 
 [StatusTable] $StatusTable_Two

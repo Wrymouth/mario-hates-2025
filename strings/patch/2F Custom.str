@@ -1,16 +1,11 @@
 #message:2F:000
 {
-[Style Inspect]This is a New Years themed mod,[BR]
-created by [SaveColor][Color:01]Wrymouth[RestoreColor], [SaveColor][Color:08]Den[RestoreColor] and[BR]
-[SaveColor][Color:07]Darxoon[RestoreColor].[BR]
-[Wait][Next]
-Have fun![Wait][End]
+[Style Narrate]Dear Diary...[BR][Wait][End]
 }
 
 #message:2F:001
 {
-[Style Narrate]Dear Diary...[BR]
-[Wait][Next]
+[Style Narrate]
 Today is the day.[BR]
 I've been preparing for this[BR]
 moment all year.[BR]
@@ -79,12 +74,13 @@ I gained...[BR]
 {
 [Style Narrate]In [Color:07]June[Color:00] I rested, because the[BR]
 training from the previous month[BR]
-was exhausting.[Wait][End]
+was exhausting.[BR]
+[Yield][End]
 }
 
 #message:2F:008
 {
-[Style Narrate]In [Color:07]July[Color:00][Pause 10] I selected...[BR]
+[Style Narrate][Next]In [Color:07]July[Color:00][Pause 10] I selected...[BR]
 [Yield][End]
 }
 
@@ -151,7 +147,7 @@ specifically?[Wait][End]
 [StartChoice]
 [Option 0]Ultra Hammer[BR]
 [Option 1]Ultra Boots[BR]
-[Option 2]+3 Star Energy[BR]
+[Option 2]+2 Star Energy[BR]
 [EndChoice][End]
 }
 
@@ -227,7 +223,7 @@ specifically?[Wait][End]
 {
 [Style Choice pos=95,90 size=140,62]
 [StartChoice]
-[Option 0]Shooting Star[BR]
+[Option 0]Snowman Doll[BR]
 [Option 1]Yummy Meal[BR]
 [Option 2]Stop Watch[BR]
 [EndChoice][End]
@@ -269,5 +265,35 @@ upcoming year will be entirely free[BR]
 of the number 5.[BR]
 [Wait][Next]
 The end.[Wait][End]
+}
+
+#message:2F:(ChoiceJune)
+{
+[Style Choice pos=110,90 size=140,46]
+[StartChoice]
+[Option 0]Happy Heart[BR]
+[Option 1]Happy Flower[BR]
+[EndChoice][End]
+}
+
+#message:2F:(StartingStats)
+{
+[Style Narrate]
+When the year began, I had...[BR]
+[Wait][Next]
+[SaveColor][Color:07]20[RestoreColor] HP[BR]
+[SaveColor][Color:07]10[RestoreColor] FP[BR]
+[SaveColor][Color:07]6[RestoreColor] BP[BR]
+[SaveColor][Color:07]4[RestoreColor] Star Energy[BR]
+[Wait][Next]
+Super Boots[BR]
+Super Hammer[BR]
+Goombario[BR]
+[Wait][Next]
+Refresh (1 SP)[BR]
+Star Storm (3 SP)[BR]
+[Wait][Next]
+And a Mystery, too.
+[Wait][End]
 }
 

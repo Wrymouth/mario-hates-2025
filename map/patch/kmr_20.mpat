@@ -157,8 +157,8 @@
     % SB t5, 005C (t0) % Bow Get
     % SB t5, 005D (t0) % Bow level
     % SB t5, 0012 (t0) % Goombario out
-    SB t3, 0290 (t0) % star power
-    SB t3, 028E (t0) % max star power
+    SB t7, 0290 (t0) % star power
+    SB t7, 028E (t0) % max star power
     JR RA
     ORI v0, r0, 2
 }
