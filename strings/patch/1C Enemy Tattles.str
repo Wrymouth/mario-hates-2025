@@ -1,17 +1,17 @@
-#string:1C:096
+#message:1C:096
 {
 	[Style Right]
 	This is a two, one of the numbers[BR]
 	making up the year 2025.[BR]
 	[Wait][Next]
-	It has 20 HP, and 1 DEF.[BR]
+	It has 22 HP, and 1 DEF.[BR]
 	[Wait][Next]
 	It has a special attack[BR]
 	which attacks both you and[BR]
 	me, so be careful![Wait][End]
 }
 
-#string:1C:097
+#message:1C:097
 {
 	[Style Right]
 	This is a zero, one of the numbers[BR]
@@ -23,15 +23,19 @@
 	which heals all enemies.[Wait][End]
 }
 
-#string:1C:098
+#message:1C:098
 {
 	[Style Right]
 	This is a five, one of the numbers[BR]
 	making up the year 2025.[BR]
 	[Wait][Next]
+	This thing is weird. You should[BR]
+	get it out of our sight as fast[BR]
+	as possible.[BR]
+	[Wait][Next]
 	It has 30 HP, and 1 DEF.[BR]
 	[Wait][Next]
 	It has a special attack which[BR]
 	hits you five times at different[BR]
-speeds.[Wait][End]
+	speeds.[Wait][End]
 }
